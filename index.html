@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Silverleaf Nightshade Field Guidebook</title>
+  <meta name="description" content="A comprehensive field guidebook for insects associated with silverleaf nightshade across Hidalgo County.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Silverleaf Nightshade</h1>
+      <p class="subtitle">Field Guidebook for Sample Collection</p>
+      <p class="description">A comprehensive reference for insects associated with silverleaf nightshade across Hidalgo County. Use the filters below to navigate taxonomic data and view detailed references.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="controls">
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search insects by common or scientific name...">
+      </div>
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">All Insects</button>
+        <button class="filter-btn" data-filter="Herbivores and Biocontrol Agents">Herbivores & Biocontrol</button>
+        <button class="filter-btn" data-filter="Pollinators">Pollinators</button>
+      </div>
+    </section>
+
+    <section class="grid-container" id="insectGrid">
+      <!-- Cards will be populated dynamically via JavaScript -->
+    </section>
+  </main>
+
+  <footer>
+    <p>Field Guidebook for Hidalgo County Sample Collection</p>
+    <p>Data provided by iNaturalist & BugGuide.</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
