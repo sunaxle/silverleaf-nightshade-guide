@@ -26,6 +26,16 @@ A missing or smeared label ruins a sample. All bags and vials must be labeled us
 
 1. **Digital Check-In (2 mins):** Pull over safely. Open the Data Collection App on your phone. Hit "Get Location" to lock in GPS. Fill out the site-level data (Temperature, Drought Stress).
 2. **Plant Selection & Photography (10 mins):** Identify 10 plants, spaced at least 5 meters apart. Place a physical ruler or scale bar next to Plant 1. Take a wide shot of the habitat, a full shot of the plant, and a macro shot of any obvious damage or insects.
+
+### 2. Genetic Leaf Sampling & Dry Ice Logistics (NEW)
+**Objective**: Preserve SLNS leaf tissue for transcriptomic analysis (gene expression) without RNA degradation.
+1. **Clipping**: Remove 3-4 young, fully expanded leaves per plant using sterilized scissors (to prevent cross-contamination).
+2. **Flash Freezing**: Immediately place leaves into a pre-labeled sterile tube or Whirl-Pak bag and drop directly into the **Dry Ice Cooler** within 60 seconds of clipping.
+3. **Chain of Custody**: Log the `Genetic_Sample_ID` in the Data Collection App, ensuring the "Sample Stored in Dry Ice" checkbox is ticked.
+4. **Daily FedEx Dispatch**: At the end of every collection day (or every 48 hours maximum), pack the frozen samples into a styrofoam shipping box with fresh dry ice.
+5. **Shipping**: Ship via FedEx Priority Overnight to Kariyat Lab. Log the tracking number in the Data Collection App.
+
+### 3. Data Syncing (Every Evening):
 3. **Above-Ground Harvesting (10 mins):** 
     *   Clip the plant at the soil line. 
     *   Drop the entire above-ground plant into a **Paper Bag** (Paper breathes and prevents mold; plastic bags will turn the plant into mush in the Texas heat). Label it: `[Nomenclature]-LEAF`.

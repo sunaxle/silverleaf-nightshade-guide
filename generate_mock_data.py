@@ -34,7 +34,8 @@ headers = [
     "Lab_Dry_Leaf_Biomass_g", "Lab_Dry_Root_Biomass_g", "Lab_Spine_Density_0_to_2", 
     "Lab_Leaf_CN_Ratio", "Lab_Root_AMF_Colonization_Pct",
     "Soil_pH_Site_Avg", "Soil_Nitrogen_ppm_Site_Avg", "Soil_Organic_Matter_Pct_Site_Avg", 
-    "Soil_Nematode_Count_Site_Avg", "Soil_AMF_Spore_Count_Site_Avg"
+    "Soil_Nematode_Count_Site_Avg", "Soil_AMF_Spore_Count_Site_Avg",
+    "Genetic_Sample_ID", "Dry_Ice_Stored", "FedEx_Tracking", "Proximity_Metrics", "Genetic_Expression_Notes"
 ]
 
 # Generate 200 entries (20 sites * 10 plants per site)
@@ -70,6 +71,9 @@ for site_idx, site in enumerate(sites):
         
     for plant_num in range(1, 11):
         bag_id = f"{date_code}-{site}-{treat[0]}-P{str(plant_num).zfill(2)}-COMP"
+        genetic_id = f"KARIYAT-GEN-{site}-{plant_num}"
+        dry_ice = "TRUE"
+        fedex = f"774{random.randint(100000000, 999999999)}"
         
         # Plant level variables influenced by treatment
         if treat == "Disturbed":
@@ -84,6 +88,8 @@ for site_idx, site in enumerate(sites):
             open_flowers = random.randint(0, 2) # Heavy damage, aborted flowers
             cn_ratio = round(random.uniform(10.0, 15.0), 1) # High N uptake
             amf_colonization = random.randint(0, 15) # Very low root colonization
+            proximity = random.choice(["Roadside", "Agricultural Field", "Residential"])
+            genetic_notes = "Upregulated defense pathways (mowing/herbivory stress)"
         else:
             damage = random.randint(0, 2)
             spines = random.randint(1, 2)
@@ -96,6 +102,8 @@ for site_idx, site in enumerate(sites):
             open_flowers = random.randint(5, 15) # Healthy
             cn_ratio = round(random.uniform(20.0, 30.0), 1) # Low N uptake
             amf_colonization = random.randint(40, 80) # High root colonization
+            proximity = random.choice(["Isolated", "Water Source"])
+            genetic_notes = "Baseline expression, low stress markers"
             
         notes = random.choice(["", "Looks healthy", "Ants present", "Drought stressed", "Mowed recently"]) if treat == "Disturbed" else random.choice(["", "Huge root", "Flowering heavily", "Very thorny"])
 
@@ -104,7 +112,8 @@ for site_idx, site in enumerate(sites):
             round(lat, 5), round(lon, 5), temp, dist_from_road,
             compaction, pct_cover, damage, open_flowers, notes,
             adults, larvae, eggs, leaf_bio, root_bio, spines, cn_ratio, amf_colonization,
-            soil_ph, soil_n, soil_om, soil_nem, amf_spores
+            soil_ph, soil_n, soil_om, soil_nem, amf_spores,
+            genetic_id, dry_ice, fedex, proximity, genetic_notes
         ]
         rows.append(row)
 

@@ -175,6 +175,41 @@
           <label for="rootSampleCollected" style="margin-bottom: 0; font-family: 'Outfit', sans-serif; font-weight: 600; color: #333;">Root Sample Collected?</label>
         </div>
 
+        <div class="form-group" style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e0e0e0;">
+          <h3 style="font-family: 'Outfit', sans-serif; color: var(--primary-color, #4CAF50); margin-bottom: 15px;">Genetic Sampling Logistics</h3>
+        </div>
+
+        <div class="form-group">
+          <label for="leafSampleId">Leaf Sample ID</label>
+          <input type="text" id="leafSampleId" name="leafSampleId" placeholder="e.g., SN-Leaf-001">
+        </div>
+
+        <div class="form-group" style="display: flex; align-items: center; gap: 10px;">
+          <input type="checkbox" id="dryIceStored" name="dryIceStored" style="width: auto;">
+          <label for="dryIceStored" style="margin-bottom: 0; font-family: 'Outfit', sans-serif; font-weight: 600; color: #333;">Sample Stored in Dry Ice?</label>
+        </div>
+
+        <div class="form-group">
+          <label for="fedexTracking">FedEx Tracking Number</label>
+          <input type="text" id="fedexTracking" name="fedexTracking" placeholder="Tracking ID for Kariyat Lab Shipment">
+        </div>
+
+        <div class="form-group" style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e0e0e0;">
+          <h3 style="font-family: 'Outfit', sans-serif; color: var(--primary-color, #4CAF50); margin-bottom: 15px;">Site & Proximity Observations</h3>
+        </div>
+
+        <div class="form-group">
+          <label for="proximityMetrics">Proximity Awareness</label>
+          <select id="proximityMetrics" name="proximityMetrics" multiple style="height: 100px;">
+            <option value="Roadside">Roadside (< 10m)</option>
+            <option value="Agricultural Field">Agricultural Field (< 50m)</option>
+            <option value="Water Source">Water Source / Irrigation</option>
+            <option value="Residential">Residential / Urban</option>
+            <option value="Isolated">Isolated / Natural</option>
+          </select>
+          <small style="display: block; margin-top: 4px; color: #666; font-size: 12px; font-family: 'Inter', sans-serif;">Hold Ctrl/Cmd to select multiple.</small>
+        </div>
+
         <div class="form-group">
           <label for="coOccurringVeg">Co-occurring Vegetation / Crops</label>
           <input type="text" id="coOccurringVeg" name="coOccurringVeg" placeholder="e.g., Sunflower, Sorghum, native grasses">

@@ -111,7 +111,7 @@
     <!-- Data Table Section -->
     <div class="section-block">
       <h2>Projected Master Dataset (Sample)</h2>
-      <p style="color: #666; margin-bottom: 15px; font-family: 'Inter';">This table simulates the final compiled dataset combining in-field observations, in-house lab processing (biomass/bugs), and outsourced agronomy lab data (AMF, soil chemistry). Displaying 50 of 200 rows.</p>
+      <p style="color: #666; margin-bottom: 15px; font-family: 'Inter';">This table simulates the final compiled dataset combining in-field observations, in-house lab processing, agronomy lab data, and Kariyat Lab genetic expression profiles. Displaying 50 of 200 rows.</p>
       
       <div class="table-responsive">
         <table id="csvTable">
@@ -119,7 +119,7 @@
             <tr id="csvHeaders"></tr>
           </thead>
           <tbody id="csvBody">
-            <tr><td colspan="28" style="text-align: center;">Loading mock database...</td></tr>
+            <tr><td colspan="33" style="text-align: center;">Loading mock database...</td></tr>
           </tbody>
         </table>
       </div>
@@ -175,6 +175,13 @@
               <td>Below-ground herbivores (Nematodes) weaken the plant systemically, making it highly susceptible to extreme defoliation by above-ground Beetles.</td>
               <td>Look for a synergistic spike: Are the highest <code>Field_Damage_Score</code> values found exclusively on plants that *also* have severe <code>Soil_Nematode_Count_Site_Avg</code> pressure?</td>
             </tr>
+            <tr>
+              <td><strong>6. Environmental Proximity & Transcriptomic Stress</strong><br>
+                <span class="badge genetics">Genetics</span> <span class="badge above">Above-Ground</span>
+              </td>
+              <td>Proximity to heavily disturbed areas (like active agricultural fields) induces chronic stress pathways in SLNS, fundamentally altering its transcriptomic profile before herbivores even arrive.</td>
+              <td>Correlate <code>Proximity_Metrics</code> with <code>Genetic_Expression_Notes</code>. If plants marked as "Agricultural Field" consistently show "Upregulated defense pathways", we can prove that proximity alone induces a preemptive defense state.</td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -217,7 +224,7 @@
         }
       })
       .catch(error => {
-        document.getElementById('csvBody').innerHTML = `<tr><td colspan="28" style="color:red; text-align:center;">Error loading CSV: ${error}. Ensure you are running a local server.</td></tr>`;
+        document.getElementById('csvBody').innerHTML = `<tr><td colspan="33" style="color:red; text-align:center;">Error loading CSV: ${error}. Ensure you are running a local server.</td></tr>`;
       });
   </script>
 </body>

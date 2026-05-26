@@ -27,7 +27,13 @@ For each sampled plant or quadrat, record the following metrics in the Data Coll
   - 3: 51-75% damage
   - 4: >75% damage or dead
 
+### 3.1.5 Genetic Leaf Sampling (Time-Sensitive)
+- **Clipping:** Using sterilized scissors, carefully cut 3-4 young, fully expanded leaves per plant.
+- **Flash-Freezing:** Immediately place the clipped leaves into a sterile tube or bag and drop it directly into the **Dry Ice Cooler**. This must be done within 60 seconds to halt RNA degradation.
+- **Log Logistics:** Enter the `Genetic_Sample_ID` and FedEx Tracking Number into the app, and check the Dry Ice confirmation box.
+
 ### 3.2 Below-Ground & Ecological Metrics
+- **Proximity Awareness:** Select the surrounding environmental metrics (Roadside, Agricultural Field, Water Source, Residential, Isolated).
 - **Co-occurring Vegetation / Crops:** Note the surrounding plant species. *Important for identifying nematode/pest reservoirs.*
 - **Field Soil Moisture Estimate:** Dry, Moist, or Saturated.
 - **Rhizosphere Soil Sample:** Use a trowel to collect soil directly surrounding the roots into a ziploc bag. Store in a cooler. Label bag and record the **Soil Sample ID**.
