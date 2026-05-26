@@ -82,10 +82,36 @@
   </header>
 
   <div class="biblio-container">
-    <h2 style="font-family: 'Outfit'; margin-bottom: 20px;">Kasper et al. (2021) Extracted Bibliography</h2>
+    <h2 style="font-family: 'Outfit'; margin-bottom: 20px;">Primary Source Documents</h2>
     <input type="text" id="biblioSearch" class="search-box" placeholder="Search authors, keywords, or topics..." onkeyup="filterCitations()">
     
     <div id="citationList">
+      
+      <!-- New Primary Sources -->
+      <div class="citation">
+        <div class="citation-text"><strong>1. Insect Herbivores Associated with Species of Solanum (Solanaceae) in Northeastern Argentina and Southeastern Paraguay...</strong><br>Olckers, T., Medal, J. C., and Gandolfo, D. E. (2002). Florida Entomologist, 85(1): 254-260.</div>
+        <a href="https://scholar.google.com/scholar?q=Insect+Herbivores+Associated+with+Species+of+Solanum+in+Northeastern+Argentina+and+Southeastern+Paraguay" target="_blank" class="doi-link">🔗 Search Full Text</a>
+      </div>
+      <div class="citation">
+        <div class="citation-text"><strong>2. Insect Ecology of Silverleaf Nightshade</strong><br>Goeden, Richard D. (1971). Weed Science, Vol. 19, No. 1: 45-51.</div>
+        <a href="https://scholar.google.com/scholar?q=Insect+Ecology+of+Silverleaf+Nightshade+Goeden" target="_blank" class="doi-link">🔗 Search Full Text</a>
+      </div>
+      <div class="citation">
+        <div class="citation-text"><strong>3. Leptinotarsa texana Schaeffer and Gargaphia arizonica Drake & Carvalho as potential biocontrol agents...</strong><br>Subedi, Samikshya, Kasper, S., Racelis, A., Lefoe, G., and Kariyat, R. (2025). Journal of Sustainable Agriculture and Environment, 4:e70104.</div>
+        <a href="https://scholar.google.com/scholar?q=Leptinotarsa+texana+Schaeffer+and+Gargaphia+arizonica+Drake" target="_blank" class="doi-link">🔗 Search Full Text</a>
+      </div>
+      <div class="citation">
+        <div class="citation-text"><strong>4. Time of emergence impacts the growth and reproduction of silverleaf nightshade (Solanum elaeagnifolium Cav.)</strong><br>Zhu, Xiaocheng, et al. (2013). Weed Biology and Management, 13: 98–103.</div>
+        <a href="https://scholar.google.com/scholar?q=Time+of+emergence+impacts+the+growth+and+reproduction+of+silverleaf+nightshade" target="_blank" class="doi-link">🔗 Search Full Text</a>
+      </div>
+      <div class="citation">
+        <div class="citation-text"><strong>5. The presence of the invasive plant Solanum elaeagnifolium deters honeybees and increases pollen limitation...</strong><br>Tscheulin, T. and Petanidou, T. (2013). Biological Invasions, 15: 385–393.</div>
+        <a href="https://scholar.google.com/scholar?q=The+presence+of+the+invasive+plant+Solanum+elaeagnifolium+deters+honeybees" target="_blank" class="doi-link">🔗 Search Full Text</a>
+      </div>
+
+      <details id="kasperBiblio" style="background: #f9f9f9; padding: 15px; border-radius: 8px; border: 1px solid #eee; margin-top: 30px;">
+        <summary style="font-family: 'Outfit'; font-size: 18px; font-weight: 600; cursor: pointer;">Kasper et al. (2021) Extracted Bibliography (36 references)</summary>
+        <div style="margin-top: 15px;">
       <div class="citation">
         <div class="citation-text">1. Pimentel D, et al. Plant, animal, and microbe invasive species in the United States and world. 2008.</div>
         <a href="https://doi.org/10.1007/978-3-540-36920-2_18" target="_blank" class="doi-link">🔗 View Full Text</a>
@@ -223,13 +249,21 @@
       <div class="citation">
         <div class="citation-text">36. Pickett ST, Cadenasso ML. Altered resources, disturbance, and heterogeneity... 2009.</div>
         <a href="https://doi.org/10.1007/s11252-008-0047-x" target="_blank" class="doi-link">🔗 View Full Text</a>
-      </div>
+        </div>
+      </details>
     </div>
   </div>
 
   <script>
     function filterCitations() {
       const input = document.getElementById("biblioSearch").value.toLowerCase();
+      
+      // Auto-expand the Kasper details if searching
+      const detailsBox = document.getElementById("kasperBiblio");
+      if (input.length > 0 && detailsBox) {
+        detailsBox.open = true;
+      }
+      
       const citations = document.getElementsByClassName("citation");
       for (let i = 0; i < citations.length; i++) {
         let text = citations[i].getElementsByClassName("citation-text")[0].innerText.toLowerCase();
