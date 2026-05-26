@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Dashboard | Silverleaf Nightshade</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .dashboard-container {
+      max-width: 1400px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .section-block {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      margin-bottom: 40px;
+    }
+    h2 {
+      font-family: 'Outfit', sans-serif;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 10px;
+      color: #333;
+    }
+    .table-responsive {
+      overflow-x: auto;
+      max-height: 500px;
+      border: 1px solid #eee;
+      border-radius: 8px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+    th, td {
+      border: 1px solid #eee;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #2c3e50;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    tbody tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    tbody tr:hover {
+      background-color: #f1f1f1;
+    }
+    
+    /* Hypothesis Table Styling */
+    .hypo-table th {
+      background-color: #2c3e50;
+    }
+    .hypo-table td {
+      white-space: normal; /* Allow wrapping for hypotheses */
+      vertical-align: top;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      background: #e9ecef;
+      color: #495057;
+      margin-right: 5px;
+      margin-bottom: 5px;
+    }
+    .badge.above { background: #d4edda; color: #155724; }
+    .badge.below { background: #cce5ff; color: #004085; }
+    .badge.genetics { background: #fff3cd; color: #856404; }
+  </style>
+</head>
+<body>
+  <nav class="global-nav">
+    <div class="nav-container">
+      <div class="nav-logo">🌿 SLN Project</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Bug Guide</a></li>
+        <li><a href="journal.html">Field Journal</a></li>
+        <li><a href="dashboard.html" class="active">Data Dashboard</a></li>
+        <li><a href="photo_lab.html">Photo Lab</a></li>
+        <li><a href="bibliography.html">Bibliography</a></li>
+        <li><a href="data_collection.html" class="nav-cta">Log Data</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero" style="padding: 40px 20px; text-align: center;">
+    <div class="hero-content">
+      <h1>Data Dashboard</h1>
+      <p class="subtitle">Unified Dataset & Research Hypotheses</p>
+    </div>
+  </header>
+
+  <div class="dashboard-container">
+    
+    <!-- Data Table Section -->
+    <div class="section-block">
+      <h2>Projected Master Dataset (Sample)</h2>
+      <p style="color: #666; margin-bottom: 15px; font-family: 'Inter';">This table simulates the final compiled dataset combining in-field observations, in-house lab processing (biomass/bugs), and outsourced agronomy lab data (AMF, soil chemistry). Displaying 50 of 200 rows.</p>
+      
+      <div class="table-responsive">
+        <table id="csvTable">
+          <thead>
+            <tr id="csvHeaders"></tr>
+          </thead>
+          <tbody id="csvBody">
+            <tr><td colspan="28" style="text-align: center;">Loading mock database...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Hypotheses Section -->
+    <div class="section-block">
+      <h2>Testable Hypotheses Derived from Dataset</h2>
+      <p style="color: #666; margin-bottom: 15px; font-family: 'Inter';">These hypotheses link the independent ecological variables to the multi-trophic dependent variables collected in the database.</p>
+      
+      <div class="table-responsive" style="overflow-x: hidden;">
+        <table class="hypo-table">
+          <thead>
+            <tr>
+              <th style="width: 25%;">Hypothesis Title</th>
+              <th style="width: 35%;">The Ecological Concept</th>
+              <th style="width: 40%;">How to Test with this Dataset</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1. The Fungal Disruption Hypothesis</strong><br>
+                <span class="badge below">Below-Ground</span> <span class="badge above">Above-Ground</span>
+              </td>
+              <td>Silverleaf nightshade relies on its root system. If disturbed roadside soils disrupt native Arbuscular Mycorrhizal Fungi (AMF) networks, the plant becomes biochemically weaker against insects.</td>
+              <td>Correlate <code>Treatment (Disturbed vs Undisturbed)</code> with <code>Soil_AMF_Spore_Count_Site_Avg</code> and <code>Lab_Root_AMF_Colonization_Pct</code>. Then, cross-reference low AMF values with higher <code>Lab_Larvae_Count</code> to prove disrupted fungi leads to higher insect loads.</td>
+            </tr>
+            <tr>
+              <td><strong>2. Life-Stage vs. Fecundity Breakdown</strong><br>
+                <span class="badge above">Above-Ground</span>
+              </td>
+              <td>Counting just "adult bugs" doesn't reflect population dynamics. Highly stressed plants might attract adults, but fail to support larval development.</td>
+              <td>Compare <code>Field_Drought_Stress</code> or <code>Field_Damage_Score</code> against the ratio of <code>Lab_Adult_Bugs</code> to <code>Lab_Egg_Count</code>. Does high stress halt reproduction?</td>
+            </tr>
+            <tr>
+              <td><strong>3. The Spines vs. Fungi Trade-off</strong><br>
+                <span class="badge below">Below-Ground</span> <span class="badge above">Above-Ground</span>
+              </td>
+              <td>Plants have a limited energy budget. They can invest in below-ground fungal networks OR above-ground mechanical defenses, but rarely both.</td>
+              <td>Perform a regression analysis comparing <code>Lab_Spine_Density_0_to_2</code> against <code>Lab_Root_AMF_Colonization_Pct</code>. Look for an inverse relationship (High AMF = Low Spines).</td>
+            </tr>
+            <tr>
+              <td><strong>4. The "Enemy Release" & Genetic Origin</strong><br>
+                <span class="badge genetics">Genetics</span> <span class="badge above">Above-Ground</span>
+              </td>
+              <td>If the Rio Grande Valley is the true evolutionary origin, populations there should have the highest baseline defenses because they evolved alongside specific predators. Invading populations (Panhandle) "escaped" and lost defenses.</td>
+              <td>Compare <code>Ecoregion (Valley vs Panhandle)</code> against <code>Lab_Spine_Density</code> and <code>Lab_Leaf_CN_Ratio</code>. If leaf DNA sequencing is added to the dataset, correlate maximum genetic diversity with the Southern ecoregion.</td>
+            </tr>
+            <tr>
+              <td><strong>5. Multi-Trophic Biocontrol Synergy</strong><br>
+                <span class="badge below">Below-Ground</span> <span class="badge above">Above-Ground</span>
+              </td>
+              <td>Below-ground herbivores (Nematodes) weaken the plant systemically, making it highly susceptible to extreme defoliation by above-ground Beetles.</td>
+              <td>Look for a synergistic spike: Are the highest <code>Field_Damage_Score</code> values found exclusively on plants that *also* have severe <code>Soil_Nematode_Count_Site_Avg</code> pressure?</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // Fetch and parse the CSV file
+    fetch('mock_master_database.csv')
+      .then(response => response.text())
+      .then(csvText => {
+        const lines = csvText.split('\n').filter(line => line.trim() !== '');
+        
+        // Extract headers
+        const headers = lines[0].split(',');
+        const headerRow = document.getElementById('csvHeaders');
+        headers.forEach(header => {
+          const th = document.createElement('th');
+          th.textContent = header;
+          headerRow.appendChild(th);
+        });
+        
+        // Extract rows (limit to first 50 to prevent freezing the DOM)
+        const tbody = document.getElementById('csvBody');
+        tbody.innerHTML = ''; // Clear loading message
+        
+        const rowLimit = Math.min(50, lines.length - 1);
+        for(let i = 1; i <= rowLimit; i++) {
+          const rowData = lines[i].split(',');
+          const tr = document.createElement('tr');
+          
+          rowData.forEach(data => {
+            const td = document.createElement('td');
+            td.textContent = data;
+            tr.appendChild(td);
+          });
+          
+          tbody.appendChild(tr);
+        }
+      })
+      .catch(error => {
+        document.getElementById('csvBody').innerHTML = `<tr><td colspan="28" style="color:red; text-align:center;">Error loading CSV: ${error}. Ensure you are running a local server.</td></tr>`;
+      });
+  </script>
+</body>
+</html>

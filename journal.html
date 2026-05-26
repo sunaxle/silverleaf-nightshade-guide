@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Field Journal | Silverleaf Nightshade</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Marked.js for rendering Markdown to HTML -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    .journal-layout {
+      display: flex;
+      max-width: 1200px;
+      margin: 40px auto;
+      gap: 30px;
+      padding: 0 20px;
+    }
+    .journal-sidebar {
+      flex: 0 0 250px;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      height: fit-content;
+    }
+    .journal-sidebar h3 {
+      font-family: 'Outfit', sans-serif;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eee;
+    }
+    .file-list {
+      list-style: none;
+      padding: 0;
+    }
+    .file-list li {
+      margin-bottom: 8px;
+    }
+    .file-list button {
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      padding: 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      color: #555;
+      transition: all 0.2s;
+    }
+    .file-list button:hover, .file-list button.active {
+      background: var(--primary-color);
+      color: white;
+    }
+    .journal-content {
+      flex: 1;
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      min-height: 500px;
+    }
+    /* Markdown Styles */
+    .journal-content h1, .journal-content h2, .journal-content h3 {
+      font-family: 'Outfit', sans-serif;
+      color: #333;
+      margin-top: 20px;
+    }
+    .journal-content p, .journal-content li {
+      line-height: 1.6;
+      color: #555;
+    }
+    .journal-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    .journal-content th, .journal-content td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    .journal-content th {
+      background-color: #f4f4f4;
+    }
+  </style>
+</head>
+<body>
+  <nav class="global-nav">
+    <div class="nav-container">
+      <div class="nav-logo">🌿 SLN Project</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Bug Guide</a></li>
+        <li><a href="journal.html" class="active">Field Journal</a></li>
+        <li><a href="dashboard.html">Data Dashboard</a></li>
+        <li><a href="photo_lab.html">Photo Lab</a></li>
+        <li><a href="bibliography.html">Bibliography</a></li>
+        <li><a href="data_collection.html" class="nav-cta">Log Data</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero" style="padding: 40px 20px; text-align: center;">
+    <div class="hero-content">
+      <h1>Interactive Field Journal</h1>
+      <p class="subtitle">Live View of Project Documents</p>
+    </div>
+  </header>
+
+  <div class="journal-layout">
+    <div class="journal-sidebar">
+      <h3>Project Files</h3>
+      <ul class="file-list" id="fileList">
+        <li><button onclick="loadFile('research_ideas.md', this)">Research Ideas</button></li>
+        <li><button onclick="loadFile('field_and_lab_workflow.md', this)">Lab Workflow</button></li>
+        <li><button onclick="loadFile('data_collection_protocol.md', this)">Data Protocol</button></li>
+        <li><button onclick="loadFile('field_trip_itinerary.md', this)">Trip Itinerary</button></li>
+        <li><button onclick="loadFile('planned_collection_sites.md', this)">Collection Sites</button></li>
+        <li><button onclick="loadFile('soil_health_metrics.md', this)">Soil Metrics</button></li>
+      </ul>
+    </div>
+    
+    <div class="journal-content" id="markdownViewer">
+      <p style="text-align: center; color: #888; margin-top: 50px;">Select a file from the sidebar to read.</p>
+    </div>
+  </div>
+
+  <script>
+    async function loadFile(filename, btnElement) {
+      // Update active state
+      document.querySelectorAll('.file-list button').forEach(b => b.classList.remove('active'));
+      if(btnElement) btnElement.classList.add('active');
+
+      const viewer = document.getElementById('markdownViewer');
+      viewer.innerHTML = "<p>Loading...</p>";
+      
+      try {
+        const response = await fetch(filename);
+        if (!response.ok) throw new Error("File not found");
+        const text = await response.text();
+        viewer.innerHTML = marked.parse(text);
+      } catch (error) {
+        viewer.innerHTML = `<p style="color: red;">Error loading ${filename}. Ensure you are running this through a local server, or that the file exists.</p>`;
+      }
+    }
+    
+    // Auto load first file
+    window.onload = () => {
+      loadFile('research_ideas.md', document.querySelector('.file-list button'));
+    };
+  </script>
+</body>
+</html>

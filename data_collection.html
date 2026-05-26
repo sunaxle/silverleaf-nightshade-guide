@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Collection | Silverleaf Nightshade</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Additional styles specifically for the form to match the premium aesthetic */
+    .form-container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: var(--card-bg, #ffffff);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: var(--text-dark, #333);
+      font-family: 'Outfit', sans-serif;
+    }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--border-color, #e0e0e0);
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary-color, #4CAF50);
+      box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+    }
+    .form-submit {
+      width: 100%;
+      padding: 14px;
+      background-color: var(--primary-color, #4CAF50);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .form-submit:hover {
+      background-color: var(--primary-dark, #45a049);
+      transform: translateY(-2px);
+    }
+    .location-btn {
+      margin-top: 8px;
+      padding: 8px 16px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.2s ease;
+    }
+    .location-btn:hover {
+      background-color: #e4e4e4;
+    }
+    #statusMessage {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      display: none;
+      font-weight: 500;
+    }
+    .success { background-color: #d4edda; color: #155724; }
+    .error { background-color: #f8d7da; color: #721c24; }
+  </style>
+</head>
+<body>
+  <nav class="global-nav">
+    <div class="nav-container">
+      <div class="nav-logo">🌿 SLN Project</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Bug Guide</a></li>
+        <li><a href="journal.html">Field Journal</a></li>
+        <li><a href="dashboard.html">Data Dashboard</a></li>
+        <li><a href="photo_lab.html">Photo Lab</a></li>
+        <li><a href="bibliography.html">Bibliography</a></li>
+        <li><a href="data_collection.html" class="active nav-cta">Log Data</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero" style="padding: 40px 20px; text-align: center;">
+    <div class="hero-content">
+      <h1>Data Collection</h1>
+      <p class="subtitle">Field Entry Form</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="form-container">
+      <form id="dataForm">
+        <div class="form-group">
+          <label for="date">Date & Time</label>
+          <input type="datetime-local" id="date" name="date" required>
+        </div>
+
+        <div class="form-group">
+          <label for="site">Site Name / ID</label>
+          <input type="text" id="site" name="site" placeholder="e.g., Plot A, North Pasture" required>
+        </div>
+
+        <div class="form-group">
+          <label for="treatment">Site Treatment</label>
+          <select id="treatment" name="treatment" required>
+            <option value="" disabled selected>Select treatment...</option>
+            <option value="Disturbed">Disturbed (Urban, Mowed, Roadside)</option>
+            <option value="Undisturbed">Undisturbed (Natural, Wild)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="coordinates">GPS Coordinates</label>
+          <input type="text" id="coordinates" name="coordinates" placeholder="Latitude, Longitude" readonly required>
+          <button type="button" class="location-btn" onclick="getLocation()">📍 Get Current Location</button>
+        </div>
+
+        <div class="form-group">
+          <label for="distanceFromRoad">Distance from Road (meters)</label>
+          <input type="number" id="distanceFromRoad" name="distanceFromRoad" step="0.1" min="0" placeholder="e.g., 5.5">
+          <small style="display: block; margin-top: 4px; color: #666; font-size: 12px; font-family: 'Inter', sans-serif;">Measures the disturbance gradient.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="temperature">Current Temperature (°C or °F)</label>
+          <input type="text" id="temperature" name="temperature" placeholder="e.g., 85F or 29C">
+        </div>
+
+        <div class="form-group">
+          <label for="droughtStress">Drought / Water Stress Level</label>
+          <select id="droughtStress" name="droughtStress">
+            <option value="" disabled selected>Select stress level...</option>
+            <option value="None">None (Soil moist, plant vigorous)</option>
+            <option value="Mild">Mild (Soil dry, slight wilting)</option>
+            <option value="Severe">Severe (Soil very dry, severe wilting, tough leaves)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="fieldSoilMoisture">Field Soil Moisture Estimate</label>
+          <select id="fieldSoilMoisture" name="fieldSoilMoisture">
+            <option value="" disabled selected>Select moisture...</option>
+            <option value="Dry">Dry</option>
+            <option value="Moist">Moist</option>
+            <option value="Saturated">Saturated</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="rhizoSoilSampleId">Rhizosphere Soil Sample ID</label>
+          <input type="text" id="rhizoSoilSampleId" name="rhizoSoilSampleId" placeholder="e.g., SN-Rhizo-001">
+        </div>
+
+        <div class="form-group" style="display: flex; align-items: center; gap: 10px;">
+          <input type="checkbox" id="rootSampleCollected" name="rootSampleCollected" style="width: auto;">
+          <label for="rootSampleCollected" style="margin-bottom: 0; font-family: 'Outfit', sans-serif; font-weight: 600; color: #333;">Root Sample Collected?</label>
+        </div>
+
+        <div class="form-group">
+          <label for="coOccurringVeg">Co-occurring Vegetation / Crops</label>
+          <input type="text" id="coOccurringVeg" name="coOccurringVeg" placeholder="e.g., Sunflower, Sorghum, native grasses">
+        </div>
+
+        <div class="form-group">
+          <label for="soilCompaction">Soil Compaction (PSI)</label>
+          <input type="number" id="soilCompaction" name="soilCompaction" step="1" min="0" placeholder="e.g., 200">
+        </div>
+
+        <div class="form-group">
+          <label for="plantStage">Plant Phenological Stage</label>
+          <select id="plantStage" name="plantStage" required>
+            <option value="" disabled selected>Select stage...</option>
+            <option value="Vegetative">Vegetative</option>
+            <option value="Budding">Budding</option>
+            <option value="Flowering">Flowering</option>
+            <option value="Fruiting">Fruiting</option>
+            <option value="Senescing">Senescing</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="percentCover">Competitor Percent Cover (%)</label>
+          <input type="number" id="percentCover" name="percentCover" step="5" min="0" max="100" placeholder="e.g., 50">
+        </div>
+
+        <div class="form-group">
+          <label for="plantHeight">Plant Height (cm)</label>
+          <input type="number" id="plantHeight" name="plantHeight" step="0.1" min="0" placeholder="e.g., 45.5">
+        </div>
+
+        <div class="form-group">
+          <label for="damageScore">Leaf Damage Score (0-4)</label>
+          <select id="damageScore" name="damageScore">
+            <option value="" disabled selected>Select damage...</option>
+            <option value="0">0: No damage</option>
+            <option value="1">1: Damage on 1-2 leaves</option>
+            <option value="2">2: ~25% of leaves damaged</option>
+            <option value="3">3: ~50% of leaves damaged</option>
+            <option value="4">4: >75% damage or dead</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="spineDensity">Spine Density (0-2)</label>
+          <select id="spineDensity" name="spineDensity">
+            <option value="" disabled selected>Select density...</option>
+            <option value="0">0: No spines</option>
+            <option value="1">1: Moderate spine density</option>
+            <option value="2">2: Very high spine density</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="openFlowers">Open Flower Count</label>
+          <input type="number" id="openFlowers" name="openFlowers" step="1" min="0" placeholder="0">
+        </div>
+
+        <div class="form-group">
+          <label for="insect">Insect Observed</label>
+          <input type="text" id="insect" name="insect" placeholder="Common or scientific name (e.g., Texas Potato Beetle)">
+        </div>
+
+        <div class="form-group">
+          <label for="count">Adult Insect Count</label>
+          <input type="number" id="count" name="count" min="0" placeholder="0">
+        </div>
+        
+        <div class="form-group">
+          <label for="fecundity">Fecundity Estimate (Eggs/Larvae)</label>
+          <input type="number" id="fecundity" name="fecundity" min="0" placeholder="Number of eggs or larvae observed">
+          <small style="display: block; margin-top: 4px; color: #666; font-size: 12px; font-family: 'Inter', sans-serif;">High fecundity indicates strong biocontrol potential.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="notes">Additional Notes</label>
+          <textarea id="notes" name="notes" rows="4" placeholder="Observations, weather conditions, damage score..."></textarea>
+        </div>
+
+        <button type="submit" class="form-submit" id="submitBtn">Submit Data</button>
+      </form>
+      
+      <div id="statusMessage"></div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Field Guidebook for Hidalgo County Sample Collection</p>
+  </footer>
+
+  <script>
+    // Set current date/time by default
+    const now = new Date();
+    now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+    document.getElementById('date').value = now.toISOString().slice(0,16);
+
+    // Geolocation function
+    function getLocation() {
+      const coordInput = document.getElementById('coordinates');
+      coordInput.placeholder = "Locating...";
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            coordInput.value = position.coords.latitude.toFixed(6) + ", " + position.coords.longitude.toFixed(6);
+          },
+          (error) => {
+            alert("Error getting location. Please ensure location services are enabled.");
+            coordInput.placeholder = "Latitude, Longitude";
+          }
+        );
+      } else {
+        alert("Geolocation is not supported by this browser.");
+      }
+    }
+
+    // Form Submission (Hook this up to your Google Apps Script URL later)
+    // Replace the URL below with the Web App URL provided by Google Apps Script
+    const GOOGLE_SCRIPT_URL = "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
+
+    document.getElementById('dataForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      if (GOOGLE_SCRIPT_URL === "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE") {
+          alert("Please configure the GOOGLE_SCRIPT_URL in data_collection.html first.");
+          return;
+      }
+
+      const submitBtn = document.getElementById('submitBtn');
+      const statusMsg = document.getElementById('statusMessage');
+      
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Submitting...";
+      
+      const formData = new FormData(this);
+      
+      fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        statusMsg.textContent = "Data submitted successfully!";
+        statusMsg.className = "success";
+        statusMsg.style.display = "block";
+        this.reset();
+        
+        // Reset date
+        const now = new Date();
+        now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+        document.getElementById('date').value = now.toISOString().slice(0,16);
+        
+        setTimeout(() => { statusMsg.style.display = "none"; }, 5000);
+      })
+      .catch(error => {
+        console.error('Error!', error.message);
+        statusMsg.textContent = "Error submitting data. Please check connection.";
+        statusMsg.className = "error";
+        statusMsg.style.display = "block";
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Submit Data";
+      });
+    });
+  </script>
+</body>
+</html>

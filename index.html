@@ -11,12 +11,38 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <nav class="global-nav">
+    <div class="nav-container">
+      <div class="nav-logo">🌿 SLN Project</div>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Bug Guide</a></li>
+        <li><a href="journal.html">Field Journal</a></li>
+        <li><a href="dashboard.html">Data Dashboard</a></li>
+        <li><a href="photo_lab.html">Photo Lab</a></li>
+        <li><a href="bibliography.html">Bibliography</a></li>
+        <li><a href="data_collection.html" class="nav-cta">Log Data</a></li>
+      </ul>
+    </div>
+  </nav>
+  
   <header class="hero">
     <div class="hero-content">
       <h1>Silverleaf Nightshade</h1>
       <p class="subtitle">Field Guidebook for Sample Collection</p>
       <p class="description">A comprehensive reference for insects associated with silverleaf nightshade across Hidalgo County. Use the filters below to navigate taxonomic data and view detailed references.</p>
-      <a href="cheat_sheet.html" class="btn-primary" style="display: inline-block; margin-top: 20px; padding: 12px 24px; background-color: rgba(255, 255, 255, 0.2); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; border: 1px solid rgba(255, 255, 255, 0.4); backdrop-filter: blur(4px); transition: all 0.3s ease;">📄 View Printable Cheat Sheet</a>
+      <div style="display: flex; gap: 15px; justify-content: center; margin-top: 20px;">
+        <a href="cheat_sheet.html" class="btn-primary" style="display: inline-block; padding: 12px 24px; background-color: rgba(255, 255, 255, 0.2); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; border: 1px solid rgba(255, 255, 255, 0.4); backdrop-filter: blur(4px); transition: all 0.3s ease;">📄 View Printable Cheat Sheet</a>
+        <a href="data_collection.html" class="btn-primary" style="display: inline-block; padding: 12px 24px; background-color: var(--primary-color, #4CAF50); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; border: 1px solid rgba(255, 255, 255, 0.4); backdrop-filter: blur(4px); transition: all 0.3s ease;">📱 Data Collection App</a>
+      </div>
+
+      <div class="podcast-player" style="margin-top: 40px; padding: 20px; background: rgba(0,0,0,0.4); border-radius: 12px; backdrop-filter: blur(8px); display: inline-block;">
+        <h3 style="margin-bottom: 15px; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; gap: 10px;">
+          🎧 NotebookLLM: Silverleaf Nightshade Deep Dive
+        </h3>
+        <a href="https://notebooklm.google.com/notebook/0eea4dd1-d541-4814-adb4-973a1672aa1b/artifact/d73ba4ab-5ce5-40d6-bb0c-416b0b33d0f6?utm_source=nlm_web_share&utm_medium=google_oo&utm_campaign=art_share_2&utm_content=&utm_smc=nlm_web_share_google_oo_art_share_2_" target="_blank" style="display: inline-block; padding: 12px 24px; background-color: var(--primary-color, #4CAF50); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;">
+          Listen to the Deep Dive Podcast →
+        </a>
+      </div>
     </div>
   </header>
 

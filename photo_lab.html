@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo Lab | Silverleaf Nightshade</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .lab-container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .camera-section {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      margin-bottom: 40px;
+    }
+    .camera-btn {
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 8px;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .camera-btn:hover {
+      background: var(--primary-dark);
+    }
+    #cameraInput {
+      display: none;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .polaroid {
+      background: white;
+      padding: 10px 10px 20px 10px;
+      border-radius: 4px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      color: #666;
+    }
+    .polaroid img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      margin-bottom: 10px;
+      background: #eee;
+    }
+  </style>
+</head>
+<body>
+  <nav class="global-nav">
+    <div class="nav-container">
+      <div class="nav-logo">🌿 SLN Project</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Bug Guide</a></li>
+        <li><a href="journal.html">Field Journal</a></li>
+        <li><a href="dashboard.html">Data Dashboard</a></li>
+        <li><a href="photo_lab.html" class="active">Photo Lab</a></li>
+        <li><a href="bibliography.html">Bibliography</a></li>
+        <li><a href="data_collection.html" class="nav-cta">Log Data</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero" style="padding: 40px 20px; text-align: center;">
+    <div class="hero-content">
+      <h1>Photo Lab</h1>
+      <p class="subtitle">Visual Data Collection & Gallery</p>
+    </div>
+  </header>
+
+  <div class="lab-container">
+    <div class="camera-section">
+      <h2 style="font-family: 'Outfit'; margin-bottom: 15px;">Capture Field Data</h2>
+      <p style="color: #666; margin-bottom: 20px;">Take photos of plant damage, viral mosaics, or bugs.</p>
+      
+      <!-- capture="environment" forces the rear camera on mobile -->
+      <label for="cameraInput" class="camera-btn">
+        📷 Open Camera
+      </label>
+      <input type="file" id="cameraInput" accept="image/*" capture="environment">
+    </div>
+
+    <h2 style="font-family: 'Outfit'; margin-bottom: 20px; border-bottom: 2px solid #eee; padding-bottom: 10px;">Recent Captures</h2>
+    <div class="gallery-grid" id="gallery">
+      <!-- Demo polaroid -->
+      <div class="polaroid">
+        <img src="images/beetle_adult.jpg" alt="Beetle" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22200%22%20height%3D%22200%22%20fill%3D%22%23ddd%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%2F%3E%3C%2Fsvg%3E'">
+        <div>Sample: Adult Texas Potato Beetle</div>
+        <div style="font-size: 11px; margin-top: 5px;">0520-S01-D-P03</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const input = document.getElementById('cameraInput');
+    const gallery = document.getElementById('gallery');
+
+    input.addEventListener('change', function(e) {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(event) {
+          // Create new polaroid element
+          const div = document.createElement('div');
+          div.className = 'polaroid';
+          
+          const now = new Date();
+          const timestamp = now.toISOString().slice(0,10) + ' ' + now.getHours() + ':' + String(now.getMinutes()).padStart(2, '0');
+          
+          div.innerHTML = `
+            <img src="${event.target.result}" alt="Field Photo">
+            <div>New Capture</div>
+            <div style="font-size: 11px; margin-top: 5px;">${timestamp}</div>
+          `;
+          
+          // Add to top of gallery
+          gallery.prepend(div);
+        }
+        reader.readAsDataURL(file);
+      }
+    });
+  </script>
+</body>
+</html>

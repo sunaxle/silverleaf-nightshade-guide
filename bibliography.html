@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bibliography | Silverleaf Nightshade</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .biblio-container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+    .citation {
+      padding: 15px 0;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .citation:last-child {
+      border-bottom: none;
+    }
+    .citation-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      color: #444;
+      line-height: 1.5;
+    }
+    .doi-link {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .doi-link:hover {
+      text-decoration: underline;
+    }
+    .search-box {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      font-family: 'Inter';
+      margin-bottom: 20px;
+    }
+    .search-box:focus {
+      outline: none;
+      border-color: var(--primary-color);
+    }
+  </style>
+</head>
+<body>
+  <nav class="global-nav">
+    <div class="nav-container">
+      <div class="nav-logo">🌿 SLN Project</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Bug Guide</a></li>
+        <li><a href="journal.html">Field Journal</a></li>
+        <li><a href="dashboard.html">Data Dashboard</a></li>
+        <li><a href="photo_lab.html">Photo Lab</a></li>
+        <li><a href="bibliography.html" class="active">Bibliography</a></li>
+        <li><a href="data_collection.html" class="nav-cta">Log Data</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero" style="padding: 40px 20px; text-align: center;">
+    <div class="hero-content">
+      <h1>Citation Hub</h1>
+      <p class="subtitle">Reference Library & Bibliography</p>
+    </div>
+  </header>
+
+  <div class="biblio-container">
+    <h2 style="font-family: 'Outfit'; margin-bottom: 20px;">Kasper et al. (2021) Extracted Bibliography</h2>
+    <input type="text" id="biblioSearch" class="search-box" placeholder="Search authors, keywords, or topics..." onkeyup="filterCitations()">
+    
+    <div id="citationList">
+      <div class="citation">
+        <div class="citation-text">1. Pimentel D, et al. Plant, animal, and microbe invasive species in the United States and world. 2008.</div>
+        <a href="https://doi.org/10.1007/978-3-540-36920-2_18" target="_blank" class="doi-link">🔗 View Full Text</a>
+      </div>
+      <div class="citation">
+        <div class="citation-text">2. Beck KG, et al. Invasive species defined in a policy context. 2008.</div>
+        <a href="https://doi.org/10.1614/IPSM-08-089.1" target="_blank" class="doi-link">🔗 View Full Text</a>
+      </div>
+      <div class="citation">
+        <div class="citation-text">3. Pimentel D, et al. Update on the environmental and economic costs associated with alien-invasive species in the United States. 2005.</div>
+        <a href="https://doi.org/10.1016/j.ecolecon.2004.10.002" target="_blank" class="doi-link">🔗 View Full Text</a>
+      </div>
+      <div class="citation">
+        <div class="citation-text">4. Xu H, et al. The distribution and economic losses of alien species invasion to China. 2006.</div>
+        <a href="https://doi.org/10.1007/s10530-005-5841-2" target="_blank" class="doi-link">🔗 View Full Text</a>
+      </div>
+      <div class="citation">
+        <div class="citation-text">5. Brunel S. Pest risk analysis for Solanum elaeaagnifolium... 2011.</div>
+        <a href="https://doi.org/10.1111/j.1365-2338.2011.02457.x" target="_blank" class="doi-link">🔗 View Full Text</a>
+      </div>
+      <div class="citation">
+        <div class="citation-text">6. Krigas N, et al. Investigating the invasion pattern of the alien plant Solanum elaeagnifolium Cav... 2021.</div>
+        <a href="https://doi.org/10.3390/plants10040805" target="_blank" class="doi-link">🔗 View Full Text</a>
+      </div>
+      <div class="citation">
+        <div class="citation-text">7. Stanton R, et al. Solanum elaeaagnifolium Cav. The biology of Australian Weeds. 2009.</div>
+      </div>
+      <div class="citation">
+        <div class="citation-text">8. Hierro JL, et al. A biogeographical approach to plant invasions... 2005.</div>
+        <a href="https://doi.org/10.1111/j.0022-0477.2004.00953.x" target="_blank" class="doi-link">🔗 View Full Text</a>
+      </div>
+      <div class="citation">
+        <div class="citation-text">9. Hill MP, et al. Insect herbivores on the exotic weeds Solanum elaeaagnifolium... in South Africa. 1993.</div>
+      </div>
+      <div class="citation">
+        <div class="citation-text">10. Lefoe G, et al. Assessing the fundamental host-range of Leptinotarsa texana... 2020.</div>
+        <a href="https://doi.org/10.1016/j.biocontrol.2019.104165" target="_blank" class="doi-link">🔗 View Full Text</a>
+      </div>
+      <div class="citation">
+        <div class="citation-text">11. Stanton R, et al. Factors affecting silverleaf nightshade germination. 2012.</div>
+        <a href="https://doi.org/10.1614/WS-D-11-00105.1" target="_blank" class="doi-link">🔗 View Full Text</a>
+      </div>
+      <div class="citation">
+        <div class="citation-text">12. Kariyat RR, Chavana J. Field data on plant growth and insect damage on the noxious weed Solanum elaeagnifolium... 2018.</div>
+        <a href="https://doi.org/10.1016/j.dib.2018.07.022" target="_blank" class="doi-link">🔗 View Full Text</a>
+      </div>
+      <div class="citation">
+        <div class="citation-text">13. Petanidou T, et al. Pollination and reproduction of an invasive plant inside and outside its ancestral range. 2018.</div>
+        <a href="https://doi.org/10.1016/j.actao.2018.03.008" target="_blank" class="doi-link">🔗 View Full Text</a>
+      </div>
+      <div class="citation">
+        <div class="citation-text">14. Hoffmann JH, et al. Promising results from the first biological control programme against a solanaceous weed... 1998.</div>
+        <a href="https://doi.org/10.1016/S0167-8809(98)00120-0" target="_blank" class="doi-link">🔗 View Full Text</a>
+      </div>
+      <div class="citation">
+        <div class="citation-text">15. Wapshere AH. Prospects for the biological control of silver-leaf nightshade... in Australia. 1988.</div>
+        <a href="https://doi.org/10.1071/AR9880187" target="_blank" class="doi-link">🔗 View Full Text</a>
+      </div>
+      <div class="citation">
+        <div class="citation-text">16. Chavana J, et al. Local adaptation to continuous mowing makes the noxious weed Solanum elaeagnifolium a superweed candidate... 2021.</div>
+        <a href="https://doi.org/10.1038/s41598-021-85789-z" target="_blank" class="doi-link">🔗 View Full Text</a>
+      </div>
+      <div class="citation">
+        <div class="citation-text">17. Boyd JW, et al. Silverleaf nightshade, origin, distribution, and relation to man. 1984.</div>
+        <a href="https://doi.org/10.1007/BF02858833" target="_blank" class="doi-link">🔗 View Full Text</a>
+      </div>
+      <div class="citation">
+        <div class="citation-text">18. Mekki M. Biology, distribution and impacts of silverleaf nightshade... 2007.</div>
+        <a href="https://doi.org/10.1111/j.1365-2338.2007.01094.x" target="_blank" class="doi-link">🔗 View Full Text</a>
+      </div>
+      <div class="citation">
+        <div class="citation-text">19. Christodoulakis NS, et al. Structural and cytochemical investigation of the leaf of silverleaf nightshade... 2009.</div>
+        <a href="https://doi.org/10.1071/BT08210" target="_blank" class="doi-link">🔗 View Full Text</a>
+      </div>
+      <div class="citation">
+        <div class="citation-text">20. Kariyat RR, et al. Non-glandular trichomes of Solanum carolinense deter feeding... 2017.</div>
+        <a href="https://doi.org/10.1098/rspb.2016.2323" target="_blank" class="doi-link">🔗 View Full Text</a>
+      </div>
+      <div class="citation">
+        <div class="citation-text">21. Kariyat RR, et al. Feeding on glandular and non-glandular leaf trichomes negatively affect growth... 2019.</div>
+        <a href="https://doi.org/10.1007/s11829-019-09678-z" target="_blank" class="doi-link">🔗 View Full Text</a>
+      </div>
+      <div class="citation">
+        <div class="citation-text">22. Watts S, Kariyat RR. Picking sides: feeding on the abaxial leaf surface is costly for caterpillars. 2021.</div>
+        <a href="https://doi.org/10.1007/s00425-021-03592-6" target="_blank" class="doi-link">🔗 View Full Text</a>
+      </div>
+      <div class="citation">
+        <div class="citation-text">23. Bryson CT, Carter R. Biology of pathways for invasive weeds. 2004.</div>
+        <a href="https://doi.org/10.1614/0890-037X(2004)018[1216:BOPFIW]2.0.CO;2" target="_blank" class="doi-link">🔗 View Full Text</a>
+      </div>
+      <div class="citation">
+        <div class="citation-text">24. Olckers T, Zimmermann HG. Biological control of silverleaf nightshade... in South Africa. 1991.</div>
+        <a href="https://doi.org/10.1016/0167-8809(91)90143-L" target="_blank" class="doi-link">🔗 View Full Text</a>
+      </div>
+      <div class="citation">
+        <div class="citation-text">25. Olckers T, et al. The initiation of biological control programmes against Solanum elaeaagnifolium... in South Africa. 1999.</div>
+      </div>
+      <div class="citation">
+        <div class="citation-text">26. Fried G, et al. Environmental and management factors determining weed species composition... 2008.</div>
+        <a href="https://doi.org/10.1016/j.agee.2008.05.003" target="_blank" class="doi-link">🔗 View Full Text</a>
+      </div>
+      <div class="citation">
+        <div class="citation-text">27. Eleftherohorinos IG, et al. Silverleaf nightshade control with foliar herbicides. 1993.</div>
+      </div>
+      <div class="citation">
+        <div class="citation-text">28. NRCS USDA. Web Soil Survey. 2020.</div>
+      </div>
+      <div class="citation">
+        <div class="citation-text">29. Jacobs JL. Soil survey of Hidalgo county, Texas. 1981.</div>
+      </div>
+      <div class="citation">
+        <div class="citation-text">30. Sasidharan L, Menendez M. Partial proportional odds model... 2014.</div>
+        <a href="https://doi.org/10.1016/j.aap.2014.07.025" target="_blank" class="doi-link">🔗 View Full Text</a>
+      </div>
+      <div class="citation">
+        <div class="citation-text">31. Cann MA. Clay spreading on water repellent sands... 2000.</div>
+        <a href="https://doi.org/10.1016/S0022-1694(00)00205-5" target="_blank" class="doi-link">🔗 View Full Text</a>
+      </div>
+      <div class="citation">
+        <div class="citation-text">32. Kariyat RR, et al. Constitutive and herbivore-induced structural defenses are compromised by inbreeding... 2013.</div>
+        <a href="https://doi.org/10.3732/ajb.1200612" target="_blank" class="doi-link">🔗 View Full Text</a>
+      </div>
+      <div class="citation">
+        <div class="citation-text">33. Huot B, et al. Growth–defense tradeoffs in plants... 2014.</div>
+        <a href="https://doi.org/10.1093/mp/ssu049" target="_blank" class="doi-link">🔗 View Full Text</a>
+      </div>
+      <div class="citation">
+        <div class="citation-text">34. Züst T, Agrawal AA. Trade-offs between plant growth and defense against insect herbivory... 2017.</div>
+        <a href="https://doi.org/10.1146/annurev-arplant-042916-040856" target="_blank" class="doi-link">🔗 View Full Text</a>
+      </div>
+      <div class="citation">
+        <div class="citation-text">35. Kariyat RR, et al. Inbreeding depression in Solanum carolinense... 2011.</div>
+        <a href="https://doi.org/10.1371/journal.pone.0028459" target="_blank" class="doi-link">🔗 View Full Text</a>
+      </div>
+      <div class="citation">
+        <div class="citation-text">36. Pickett ST, Cadenasso ML. Altered resources, disturbance, and heterogeneity... 2009.</div>
+        <a href="https://doi.org/10.1007/s11252-008-0047-x" target="_blank" class="doi-link">🔗 View Full Text</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function filterCitations() {
+      const input = document.getElementById("biblioSearch").value.toLowerCase();
+      const citations = document.getElementsByClassName("citation");
+      for (let i = 0; i < citations.length; i++) {
+        let text = citations[i].getElementsByClassName("citation-text")[0].innerText.toLowerCase();
+        if (text.includes(input)) {
+          citations[i].style.display = "flex";
+        } else {
+          citations[i].style.display = "none";
+        }
+      }
+    }
+  </script>
+</body>
+</html>
