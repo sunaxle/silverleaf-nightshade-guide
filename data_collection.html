@@ -301,14 +301,29 @@
     <p>Field Guidebook for Hidalgo County Sample Collection</p>
   </footer>
 
-  <script>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+
+    const firebaseConfig = {
+      projectId: "slns-field-journal-123",
+      appId: "1:499543531884:web:386ac60e33d738f91a1349",
+      storageBucket: "slns-field-journal-123.firebasestorage.app",
+      apiKey: "AIzaSyDk7TXay4QN6zAAFhbIJk3zRPCM0eezTFk",
+      authDomain: "slns-field-journal-123.firebaseapp.com",
+      messagingSenderId: "499543531884"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
     // Set current date/time by default
     const now = new Date();
     now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
     document.getElementById('date').value = now.toISOString().slice(0,16);
 
-    // Geolocation function
-    function getLocation() {
+    // Geolocation function (bound to window so the HTML onclick can see it)
+    window.getLocation = function() {
       const coordInput = document.getElementById('coordinates');
       coordInput.placeholder = "Locating...";
       if (navigator.geolocation) {
@@ -324,35 +339,36 @@
       } else {
         alert("Geolocation is not supported by this browser.");
       }
-    }
+    };
 
-    // Form Submission (Hook this up to your Google Apps Script URL later)
-    // Replace the URL below with the Web App URL provided by Google Apps Script
-    const GOOGLE_SCRIPT_URL = "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
-
-    document.getElementById('dataForm').addEventListener('submit', function(e) {
+    document.getElementById('dataForm').addEventListener('submit', async function(e) {
       e.preventDefault();
       
-      if (GOOGLE_SCRIPT_URL === "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE") {
-          alert("Please configure the GOOGLE_SCRIPT_URL in data_collection.html first.");
-          return;
-      }
-
       const submitBtn = document.getElementById('submitBtn');
       const statusMsg = document.getElementById('statusMessage');
       
       submitBtn.disabled = true;
-      submitBtn.textContent = "Submitting...";
+      submitBtn.textContent = "Submitting to Database...";
       
       const formData = new FormData(this);
+      const data = Object.fromEntries(formData.entries());
       
-      fetch(GOOGLE_SCRIPT_URL, {
-        method: 'POST',
-        body: formData
-      })
-      .then(response => response.json())
-      .then(data => {
-        statusMsg.textContent = "Data submitted successfully!";
+      // Handle multi-select properly for Proximity
+      const proximitySelect = document.getElementById('proximityMetrics');
+      if (proximitySelect) {
+        const selectedProx = Array.from(proximitySelect.selectedOptions).map(opt => opt.value);
+        data.proximityMetrics = selectedProx;
+      }
+      
+      // Handle checkboxes explicitly since unchecked ones don't appear in FormData
+      data.rootSampleCollected = document.getElementById('rootSampleCollected').checked;
+      data.dryIceStored = document.getElementById('dryIceStored').checked;
+      
+      try {
+        const docRef = await addDoc(collection(db, "field_samples"), data);
+        console.log("Document written with ID: ", docRef.id);
+        
+        statusMsg.textContent = "Data securely saved to Firestore Database!";
         statusMsg.className = "success";
         statusMsg.style.display = "block";
         this.reset();
@@ -363,17 +379,15 @@
         document.getElementById('date').value = now.toISOString().slice(0,16);
         
         setTimeout(() => { statusMsg.style.display = "none"; }, 5000);
-      })
-      .catch(error => {
-        console.error('Error!', error.message);
-        statusMsg.textContent = "Error submitting data. Please check connection.";
+      } catch (error) {
+        console.error('Error adding document: ', error);
+        statusMsg.textContent = "Error saving to database. Check your internet connection.";
         statusMsg.className = "error";
         statusMsg.style.display = "block";
-      })
-      .finally(() => {
+      } finally {
         submitBtn.disabled = false;
         submitBtn.textContent = "Submit Data";
-      });
+      }
     });
   </script>
 </body>
