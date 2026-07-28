@@ -68,7 +68,16 @@
   * **Ink Running:** Double-bagged tubes in Ziplocs to protect Sharpie text from ethanol/condensation.
   * **Truck Transit:** Extra walking trips for tools/bags.
   * **Peak Heat Stress (2:30 PM – 4:00 PM):** High thermal load; bugs retreated into shade/soil, though foliar damage remained heavy.
-* **Full Report File:** Link to [field_expedition_report_07282026.md](file:///Users/dr3/.gemini/antigravity/brain/828fa471-7f91-45b7-b6b6-a931aae6672e/field_expedition_report_07282026.md).
+
+---
+
+## 📅 Entry 6: Real Yield Audit & Protocol Calibration for Dr. Alexis Racelis
+* **Date/Time:** July 28, 2026 | 5:35 PM CDT  
+* **Actual Tuesday Yield Audit:** 1 Site (`S01`), 3 Plant Replicates (`P01`, `P02`, `P03`).
+* **Dry Ice Cooler Status:** Replicates 1, 2, and 3 are **currently stabilized on dry ice in the cooler**. Shipping was held today to combine with Wednesday's batch.
+* **Protocol Scope Finding:** Combining Dr. Kariyat's above-ground protocol with Dr. Sotti's below-ground shovel digging triples sampling time per site (~1.5+ hrs).
+* **P.I. Communication Strategy:** Posed 3 core questions to Dr. Alexis Racelis regarding scope streamlining, replicate count thresholds (3 vs 5), and Wednesday transit routing.
+* **Full Memo File:** Link to [strategic_memo_dr_racelis.md](file:///Users/dr3/.gemini/antigravity/brain/828fa471-7f91-45b7-b6b6-a931aae6672e/strategic_memo_dr_racelis.md).
 
 ---
 
