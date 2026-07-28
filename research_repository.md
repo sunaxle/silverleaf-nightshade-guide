@@ -1,3 +1,5 @@
+[[work]]
+
 # Silverleaf Nightshade (Solanum elaeagnifolium) Research Repository
 
 *This document serves as a central repository for research articles, abstracts, and key findings regarding Silverleaf Nightshade. You can seamlessly paste content here for integration with NotebookLLM.*

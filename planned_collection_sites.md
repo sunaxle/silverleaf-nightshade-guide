@@ -1,3 +1,5 @@
+[[work]]
+
 # Planned Collection Sites Master Sheet
 *Use this table to pre-plan specific GPS coordinates and populations before you hit the road. It mimics the format used in Kariyat & Chavana (2018).*
 

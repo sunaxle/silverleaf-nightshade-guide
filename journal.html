@@ -112,6 +112,8 @@
     <div class="journal-sidebar">
       <h3>Project Files</h3>
       <ul class="file-list" id="fileList">
+        <li><button onclick="loadFile('rolling_field_journal.md', this)">📓 Rolling Field Journal</button></li>
+        <li><button onclick="loadFile('dr_sotti_lab_methodology.md', this)">Dr. Sotti's Methodology</button></li>
         <li><button onclick="loadFile('research_ideas.md', this)">Research Ideas</button></li>
         <li><button onclick="loadFile('field_and_lab_workflow.md', this)">Lab Workflow</button></li>
         <li><button onclick="loadFile('data_collection_protocol.md', this)">Data Protocol</button></li>
@@ -147,7 +149,7 @@
     
     // Auto load first file
     window.onload = () => {
-      loadFile('research_ideas.md', document.querySelector('.file-list button'));
+      loadFile('rolling_field_journal.md', document.querySelector('.file-list button'));
     };
   </script>
 </body>

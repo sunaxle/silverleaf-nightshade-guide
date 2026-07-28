@@ -1,3 +1,5 @@
+[[work]]
+
 # Research Ideas & Brainstorming
 
 *Use this document to brainstorm hypotheses, outline project goals, and track the direction of your Silverleaf Nightshade research.*
