@@ -12,8 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
       ? `<a href="${insect.inaturalist}" target="_blank" class="link-btn link-inaturalist">iNaturalist</a>` 
       : '';
       
+    let bugGuideLabel = 'BugGuide';
+    if (insect.bugguide && insect.bugguide.includes('landcareresearch')) {
+      bugGuideLabel = 'Biocontrol Guide';
+    }
+
     const bugGuideLink = insect.bugguide 
-      ? `<a href="${insect.bugguide}" target="_blank" class="link-btn link-bugguide">BugGuide</a>` 
+      ? `<a href="${insect.bugguide}" target="_blank" class="link-btn link-bugguide">${bugGuideLabel}</a>` 
       : '';
 
     card.innerHTML = `

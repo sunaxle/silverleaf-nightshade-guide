@@ -123,8 +123,16 @@
 * **Key Observations & Morphological Evidence:**
   1. **Fecal Shields:** Dark, clumped structures held over larval backs via a hinged caudal furca (anal fork) for chemical/physical defense against ants and stink bugs.
   2. **Windowpane Herbivory:** Circular semi-translucent spots caused by early-instars scraping the upper epidermis while preserving the lower epidermal membrane.
-  3. **Colony Target:** High-priority target for live colony founding along Wednesday's San Angelo → Abilene → Wichita Falls corridor.
-* **Full Report File:** Link to [gratiana_pallidula_field_report.md](file:///Users/dr3/.gemini/antigravity/brain/828fa471-7f91-45b7-b6b6-a931aae6672e/gratiana_pallidula_field_report.md).
+  3. **Voucher Photo:** Mapped directly to Photo #12 (`IMG_9222.HEIC`).
+
+---
+
+## 📅 Entry 12: Integrated Woolly Nightshade Lace Bug (*Gargaphia decoris*) & Biocontrol Resource
+* **Date/Time:** July 28, 2026 | 9:48 PM CDT  
+* **Species Added:** Woolly Nightshade / Solanaceous Lace Bug (*Gargaphia decoris* Drake, Tingidae).
+* **Biocontrol Documentation:** Integrated Manaaki Whenua Landcare Research biocontrol guide into Bug Guide web app (`index.html` / `app.js` / `data.js`).
+* **Field Scouting Protocol:** Look on **underside of leaves (abaxial surface)** for gregarious spiny nymph clusters, adults (~3-4mm lace wings), pale yellow stippling, and black tar-like frass drops.
+* **Full Scouting Guide File:** Link to [lace_bug_biocontrol_guide.md](file:///Users/dr3/.gemini/antigravity/brain/828fa471-7f91-45b7-b6b6-a931aae6672e/lace_bug_biocontrol_guide.md).
 
 ---
 
