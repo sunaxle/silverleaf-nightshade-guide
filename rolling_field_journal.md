@@ -163,9 +163,14 @@
 ## 📅 Entry 16: iNaturalist Global Taxon Audit for *Gargaphia* spp. (Taxon 424700)
 * **Date/Time:** July 28, 2026 | 10:21 PM CDT  
 * **Taxon Query Result:** *Gargaphia arizonica* has **only 7 documented observations on iNaturalist globally**, and *Gargaphia opacula* has **0 observations**!
-* **Underreporting Factors:** Abaxial under-leaf hiding habit, 3-4mm micro size, identification hardship (wing venation under scope), and misidentification as mold/dirt.
-* **Research Value:** Highlights that our expedition's *Gargaphia* vouchers and photos will represent **high-value primary research data** filling major geographical and ecological gaps in North American biocontrol databases.
-* **Full Audit Memo File:** Link to [why_lace_bugs_are_underreported_inaturalist.md](file:///Users/dr3/.gemini/antigravity/brain/828fa471-7f91-45b7-b6b6-a931aae6672e/why_lace_bugs_are_underreported_inaturalist.md).
+
+---
+
+## 📅 Entry 17: Fail-Proof Field Photo Delimiter & Timestamp Matching Protocol
+* **Date/Time:** July 29, 2026 | 6:45 AM CDT  
+* **Field Visual Delimiter Protocol:** Enforced holding physical tube/bag label tag or finger sign (1 finger = P01, 2 fingers = P02, 3 fingers = P03) in Frame #1 for each plant series.
+* **EXIF Timestamp Auto-Matching:** Confirmed that `photo_lab.html` uses camera EXIF timestamps and GPS metadata to cluster photos automatically, allowing zero-stress photo uploading even if random landscape/bug shots are taken.
+* **Full Photo Protocol File:** Link to [photo_delimiter_and_matching_sop.md](file:///Users/dr3/.gemini/antigravity/brain/828fa471-7f91-45b7-b6b6-a931aae6672e/photo_delimiter_and_matching_sop.md).
 
 ---
 
