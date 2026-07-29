@@ -112,65 +112,54 @@
   * **Tube 1 (`R1`):** Cap `SA01-FLOW-R1` \| Side `SE | SA01 | FLOW | R1 (P1-P3) | 2026-07-28 | DR`
   * **Tube 2 (`R2`):** Cap `SA01-FLOW-R2` \| Side `SE | SA01 | FLOW | R2 (P4-P6) | 2026-07-28 | DR`
   * **Tube 3 (`R3`):** Cap `SA01-FLOW-R3` \| Side `SE | SA01 | FLOW | R3 (P7-P9) | 2026-07-28 | DR`
-* **Master Mapping Updated:** Linked all physical tube cap/side strings to `photo_metadata.json`, `photo_lab.html`, and `photo_mapping_and_labeling_master.md`.
 
 ---
 
 ## 📅 Entry 11: Entomological Identification — *Gratiana pallidula* (Eggplant Tortoise Beetle)
 * **Date/Time:** July 28, 2026 | 9:37 PM CDT  
-* **Species Confirmed:** *Gratiana pallidula* (Chrysomelidae: Cassidinae)  
-* **Key Observations & Morphological Evidence:**
-  1. **Fecal Shields:** Dark, clumped structures held over larval backs via a hinged caudal furca (anal fork) for chemical/physical defense against ants and stink bugs.
-  2. **Windowpane Herbivory:** Circular semi-translucent spots caused by early-instars scraping the upper epidermis while preserving the lower epidermal membrane.
-  3. **Voucher Photo:** Mapped directly to Photo #12 (`IMG_9222.HEIC`).
+* **Species Confirmed:** *Gratiana pallidula* (Chrysomelidae: Cassidinae)
 
 ---
 
 ## 📅 Entry 12: Integrated Woolly Nightshade Lace Bug (*Gargaphia decoris*) & Biocontrol Resource
 * **Date/Time:** July 28, 2026 | 9:48 PM CDT  
 * **Species Added:** Woolly Nightshade / Solanaceous Lace Bug (*Gargaphia decoris* Drake, Tingidae).
-* **Biocontrol Documentation:** Integrated Manaaki Whenua Landcare Research biocontrol guide into Bug Guide web app (`index.html` / `app.js` / `data.js`).
 
 ---
 
 ## 📅 Entry 13: Finalized Wednesday Expedition Blueprint (San Angelo → Abilene → Wichita Falls)
-* **Date/Time:** July 28, 2026 | 10:07 PM CDT  
-* **Finalized Itinerary:**
-  1. **7:30 AM – 9:00 AM (San Angelo):** Sample 1–2 spots in San Angelo (`S02`). Whole-plant bagging + 3 fast replicates + live colony capture.
-  2. **9:15 AM (FedEx Dropoff):** Consolidate Tuesday (`SA01`) + Wednesday morning (`S02`) dry ice tubes; drop at FedEx (3371 Knickerbocker Rd).
-  3. **9:30 AM – 10:50 AM (Transit):** Drive US-277 N to Abilene (89 mi).
-  4. **11:00 AM – 11:45 AM (Abilene):** Sample Site `S03` (Taylor County / Rolling Plains). Whole-plant bagging + live colony capture.
-  5. **12:00 PM – 2:15 PM (Transit):** Drive US-277/US-287 N to Wichita Falls (142 mi). Make 5-min "Sotti-style" roadside opportunity stops (`OPP01`, `OPP02`).
-  6. **2:30 PM – 3:30 PM (Hotel Check-In & Rest):** Check into Wichita Falls hotel, store live insect colony tubes in AC room, rehydrate team.
-  7. **3:45 PM – 5:00 PM (Wichita Falls):** Sample Site `S04` (Red River Basin).
-  8. **5:15 PM (FedEx Dropoff):** Drop afternoon dry ice batch at Wichita Falls FedEx store before 6:00 PM cutoff.
+* **Date/Time:** July 28, 2026 | 10:07 PM CDT
 
 ---
 
 ## 📅 Entry 14: Visual Field Photo Identification Keys for Lace Bugs (*Gargaphia* spp.)
-* **Date/Time:** July 28, 2026 | 10:16 PM CDT  
-* **Visual Photo Guide Synthesized:** Extracted key visual identifiers from Manaaki Whenua Landcare Research photos for field scouting.
+* **Date/Time:** July 28, 2026 | 10:16 PM CDT
 
 ---
 
 ## 📅 Entry 15: Jumbo Whole-Plant Bag Master Labeling Protocol (`SA02`, `AB01`, `WF01`)
-* **Date/Time:** July 28, 2026 | 10:18 PM CDT  
-* **Standard Bag Label Formula:** `SE | [SITE_CODE] | FLOW | P01-P03 (3 Plants) | 2026-07-29 | DR`
-* **Short Code Tags:** `SA02-FLOW-P01-P03-TOP`, `AB01-FLOW-P01-P03-TOP`, `WF01-FLOW-P01-P03-TOP`
+* **Date/Time:** July 28, 2026 | 10:18 PM CDT
 
 ---
 
 ## 📅 Entry 16: iNaturalist Global Taxon Audit for *Gargaphia* spp. (Taxon 424700)
-* **Date/Time:** July 28, 2026 | 10:21 PM CDT  
-* **Taxon Query Result:** *Gargaphia arizonica* has **only 7 documented observations on iNaturalist globally**, and *Gargaphia opacula* has **0 observations**!
+* **Date/Time:** July 28, 2026 | 10:21 PM CDT
 
 ---
 
 ## 📅 Entry 17: Fail-Proof Field Photo Delimiter & Timestamp Matching Protocol
-* **Date/Time:** July 29, 2026 | 6:45 AM CDT  
-* **Field Visual Delimiter Protocol:** Enforced holding physical tube/bag label tag or finger sign (1 finger = P01, 2 fingers = P02, 3 fingers = P03) in Frame #1 for each plant series.
-* **EXIF Timestamp Auto-Matching:** Confirmed that `photo_lab.html` uses camera EXIF timestamps and GPS metadata to cluster photos automatically, allowing zero-stress photo uploading even if random landscape/bug shots are taken.
-* **Full Photo Protocol File:** Link to [photo_delimiter_and_matching_sop.md](file:///Users/dr3/.gemini/antigravity/brain/828fa471-7f91-45b7-b6b6-a931aae6672e/photo_delimiter_and_matching_sop.md).
+* **Date/Time:** July 29, 2026 | 6:45 AM CDT
+
+---
+
+## 📅 Entry 18: Wednesday Master Sample Bag Labeling Sheet (`SA02`, `AB01`, `WF01`, `OPP01`, `OPP02`)
+* **Date/Time:** July 29, 2026 | 6:47 AM CDT  
+* **Prepared 11 Jumbo Sample Bag Labels:**
+  * **San Angelo Site 2 (`SA02`):** Bags `SA02-FLOW-P01-P03-TOP`, `SA02-FLOW-P04-P06-TOP`, `SA02-FLOW-P07-P09-TOP`
+  * **Abilene Site 1 (`AB01`):** Bags `AB01-FLOW-P01-P03-TOP`, `AB01-FLOW-P04-P06-TOP`, `AB01-FLOW-P07-P09-TOP`
+  * **Wichita Falls Site 1 (`WF01`):** Bags `WF01-FLOW-P01-P03-TOP`, `WF01-FLOW-P04-P06-TOP`, `WF01-FLOW-P07-P09-TOP`
+  * **Roadside Opportunistic Stops (`OPP01`, `OPP02`):** Bags `0729-OPP01-BULK-TOP`, `0729-OPP02-BULK-TOP`
+* **Full Label Sheet File:** Link to [wednesday_master_sample_bag_labels.md](file:///Users/dr3/.gemini/antigravity/brain/828fa471-7f91-45b7-b6b6-a931aae6672e/wednesday_master_sample_bag_labels.md).
 
 ---
 
