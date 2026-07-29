@@ -107,23 +107,17 @@
 ---
 
 ## 📅 Entry 10: Physical Tube Labeling Database Integration (`SA01`)
-* **Date/Time:** July 28, 2026 | 9:21 PM CDT  
-* **Physical Tube Markings Verified:**
-  * **Tube 1 (`R1`):** Cap `SA01-FLOW-R1` \| Side `SE | SA01 | FLOW | R1 (P1-P3) | 2026-07-28 | DR`
-  * **Tube 2 (`R2`):** Cap `SA01-FLOW-R2` \| Side `SE | SA01 | FLOW | R2 (P4-P6) | 2026-07-28 | DR`
-  * **Tube 3 (`R3`):** Cap `SA01-FLOW-R3` \| Side `SE | SA01 | FLOW | R3 (P7-P9) | 2026-07-28 | DR`
+* **Date/Time:** July 28, 2026 | 9:21 PM CDT
 
 ---
 
 ## 📅 Entry 11: Entomological Identification — *Gratiana pallidula* (Eggplant Tortoise Beetle)
-* **Date/Time:** July 28, 2026 | 9:37 PM CDT  
-* **Species Confirmed:** *Gratiana pallidula* (Chrysomelidae: Cassidinae)
+* **Date/Time:** July 28, 2026 | 9:37 PM CDT
 
 ---
 
 ## 📅 Entry 12: Integrated Woolly Nightshade Lace Bug (*Gargaphia decoris*) & Biocontrol Resource
-* **Date/Time:** July 28, 2026 | 9:48 PM CDT  
-* **Species Added:** Woolly Nightshade / Solanaceous Lace Bug (*Gargaphia decoris* Drake, Tingidae).
+* **Date/Time:** July 28, 2026 | 9:48 PM CDT
 
 ---
 
@@ -153,13 +147,18 @@
 ---
 
 ## 📅 Entry 18: Wednesday Master Sample Bag Labeling Sheet (`SA02`, `AB01`, `WF01`, `OPP01`, `OPP02`)
-* **Date/Time:** July 29, 2026 | 6:47 AM CDT  
-* **Prepared 11 Jumbo Sample Bag Labels:**
-  * **San Angelo Site 2 (`SA02`):** Bags `SA02-FLOW-P01-P03-TOP`, `SA02-FLOW-P04-P06-TOP`, `SA02-FLOW-P07-P09-TOP`
-  * **Abilene Site 1 (`AB01`):** Bags `AB01-FLOW-P01-P03-TOP`, `AB01-FLOW-P04-P06-TOP`, `AB01-FLOW-P07-P09-TOP`
-  * **Wichita Falls Site 1 (`WF01`):** Bags `WF01-FLOW-P01-P03-TOP`, `WF01-FLOW-P04-P06-TOP`, `WF01-FLOW-P07-P09-TOP`
-  * **Roadside Opportunistic Stops (`OPP01`, `OPP02`):** Bags `0729-OPP01-BULK-TOP`, `0729-OPP02-BULK-TOP`
-* **Full Label Sheet File:** Link to [wednesday_master_sample_bag_labels.md](file:///Users/dr3/.gemini/antigravity/brain/828fa471-7f91-45b7-b6b6-a931aae6672e/wednesday_master_sample_bag_labels.md).
+* **Date/Time:** July 29, 2026 | 6:47 AM CDT
+
+---
+
+## 📅 Entry 19: Integrated Dr. Sotti Authoritative 4-Plant Paired Sampling Protocol (2 HERB / 2 NOHERB)
+* **Date/Time:** July 29, 2026 | 6:51 AM CDT  
+* **Authoritative 4-Plant Pairing Rules Integrated:**
+  1. **0.25 m² Quadrat Grid:** Select 4 mature (flowering/fruiting) plants within grid.
+  2. **2 HERB / 2 NOHERB Pairing:** Select 2 plants **WITH herbivory** (covering all damage types) and 2 clean control plants **WITHOUT herbivory**.
+  3. **Site Measurements & 3 Photos:** Record Soil Moisture + GPS Geolocation + 3 Mandatory Photos (Neighboring Vegetation, SLN Density, Herbivory Types).
+  4. **Shovel Digging (20–30 cm):** Extract 20–30 cm intact root/rhizosphere soil core → clip stem at ground level → Top in Jumbo Poly Bag, Root/Soil in Ziploc.
+* **Full SOP File:** Link to [dr_sotti_4_plant_sampling_protocol_sop.md](file:///Users/dr3/.gemini/antigravity/brain/828fa471-7f91-45b7-b6b6-a931aae6672e/dr_sotti_4_plant_sampling_protocol_sop.md).
 
 ---
 
