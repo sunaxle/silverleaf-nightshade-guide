@@ -114,7 +114,17 @@
   * **Tube 2 (`R2`):** Cap `SA01-FLOW-R2` \| Side `SE | SA01 | FLOW | R2 (P4-P6) | 2026-07-28 | DR`
   * **Tube 3 (`R3`):** Cap `SA01-FLOW-R3` \| Side `SE | SA01 | FLOW | R3 (P7-P9) | 2026-07-28 | DR`
 * **Master Mapping Updated:** Linked all physical tube cap/side strings to `photo_metadata.json`, `photo_lab.html`, and `photo_mapping_and_labeling_master.md`.
-* **Master File:** Link to [photo_mapping_and_labeling_master.md](file:///Users/dr3/.gemini/antigravity/brain/828fa471-7f91-45b7-b6b6-a931aae6672e/photo_mapping_and_labeling_master.md).
+
+---
+
+## 📅 Entry 11: Entomological Identification — *Gratiana pallidula* (Eggplant Tortoise Beetle)
+* **Date/Time:** July 28, 2026 | 9:37 PM CDT  
+* **Species Confirmed:** *Gratiana pallidula* (Chrysomelidae: Cassidinae)  
+* **Key Observations & Morphological Evidence:**
+  1. **Fecal Shields:** Dark, clumped structures held over larval backs via a hinged caudal furca (anal fork) for chemical/physical defense against ants and stink bugs.
+  2. **Windowpane Herbivory:** Circular semi-translucent spots caused by early-instars scraping the upper epidermis while preserving the lower epidermal membrane.
+  3. **Colony Target:** High-priority target for live colony founding along Wednesday's San Angelo → Abilene → Wichita Falls corridor.
+* **Full Report File:** Link to [gratiana_pallidula_field_report.md](file:///Users/dr3/.gemini/antigravity/brain/828fa471-7f91-45b7-b6b6-a931aae6672e/gratiana_pallidula_field_report.md).
 
 ---
 
