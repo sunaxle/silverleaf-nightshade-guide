@@ -94,10 +94,16 @@
 ## 📅 Entry 8: Opportunistic Highway Sampling Protocol ('Sotti-Style' Roadside Stops)
 * **Date/Time:** July 28, 2026 | 8:48 PM CDT  
 * **Opportunistic Sampling Protocol Added:**
-  * Enabled 5–10 minute "Sotti-Style" roadside opportunity stops during the 3.5-hour highway drive (US-287 / US-84) when dense, high-herbivory *Solanum elaeagnifolium* colonies are spotted.
+  * Enabled 5–10 minute "Sotti-Style" roadside opportunity stops during the highway drive when dense, high-herbivory *Solanum elaeagnifolium* colonies are spotted.
   * **Primary Focus:** Rapid insect plucking into live colony ventilated tubes (with fresh host leaves) and ethanol vials.
-  * **Sotti Soil Metrics:** 1-minute surface soil compaction reading (PSI probe) + quick surface soil/root core.
-  * **Sample Nomenclature:** Tagged as `[MMDD]-OPP[01]-[TREATMENT]-[TYPE]`.
+
+---
+
+## 📅 Entry 9: Wednesday Route Revision — Abilene Sampling Stop Included
+* **Date/Time:** July 28, 2026 | 9:08 PM CDT  
+* **Route Update:** Added **Abilene, TX (Taylor County)** as a primary sampling stop on Wednesday.
+* **Geographic Corridor:** San Angelo (US-277 N, 89 mi) → Abilene (Site `S03`, 10:15–11:15 AM) → Wichita Falls (US-277/US-287 N, 142 mi, Site `S04`, 3:45–5:00 PM). Total driving: ~231 miles (3.5 hours).
+* **Ecoregion Benefit:** Captures 3 distinct ecoregion datasets in a single day: Red Prairie (San Angelo) → Rolling Plains/Limestone (Abilene) → Red River Basin (Wichita Falls).
 * **Full Plan File:** Link to [expedition_plan_and_insect_colony_sop.md](file:///Users/dr3/.gemini/antigravity/brain/828fa471-7f91-45b7-b6b6-a931aae6672e/expedition_plan_and_insect_colony_sop.md).
 
 ---
