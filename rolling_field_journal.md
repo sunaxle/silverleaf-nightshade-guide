@@ -77,7 +77,6 @@
 * **Dry Ice Cooler Status:** Replicates 1, 2, and 3 are **currently stabilized on dry ice in the cooler**. Shipping was held today to combine with Wednesday's batch.
 * **Protocol Scope Finding:** Combining Dr. Kariyat's above-ground protocol with Dr. Sotti's below-ground shovel digging triples sampling time per site (~1.5+ hrs).
 * **P.I. Communication Strategy:** Posed 3 core questions to Dr. Alexis Racelis regarding scope streamlining, replicate count thresholds (3 vs 5), and Wednesday transit routing.
-* **Full Memo File:** Link to [strategic_memo_dr_racelis.md](file:///Users/dr3/.gemini/antigravity/brain/828fa471-7f91-45b7-b6b6-a931aae6672e/strategic_memo_dr_racelis.md).
 
 ---
 
@@ -131,7 +130,6 @@
 * **Date/Time:** July 28, 2026 | 9:48 PM CDT  
 * **Species Added:** Woolly Nightshade / Solanaceous Lace Bug (*Gargaphia decoris* Drake, Tingidae).
 * **Biocontrol Documentation:** Integrated Manaaki Whenua Landcare Research biocontrol guide into Bug Guide web app (`index.html` / `app.js` / `data.js`).
-* **Field Scouting Protocol:** Look on **underside of leaves (abaxial surface)** for gregarious spiny nymph clusters, adults (~3-4mm lace wings), pale yellow stippling, and black tar-like frass drops.
 
 ---
 
@@ -146,7 +144,17 @@
   6. **2:30 PM – 3:30 PM (Hotel Check-In & Rest):** Check into Wichita Falls hotel, store live insect colony tubes in AC room, rehydrate team.
   7. **3:45 PM – 5:00 PM (Wichita Falls):** Sample Site `S04` (Red River Basin).
   8. **5:15 PM (FedEx Dropoff):** Drop afternoon dry ice batch at Wichita Falls FedEx store before 6:00 PM cutoff.
-* **Full Plan File:** Link to [expedition_plan_and_insect_colony_sop.md](file:///Users/dr3/.gemini/antigravity/brain/828fa471-7f91-45b7-b6b6-a931aae6672e/expedition_plan_and_insect_colony_sop.md).
+
+---
+
+## 📅 Entry 14: Visual Field Photo Identification Keys for Lace Bugs (*Gargaphia* spp.)
+* **Date/Time:** July 28, 2026 | 10:16 PM CDT  
+* **Visual Photo Guide Synthesized:** Extracted key visual identifiers from Manaaki Whenua Landcare Research photos for field scouting:
+  1. **Adults (~3–4 mm):** Transparent lace-patterned wings + pale cream collar hood.
+  2. **Nymphs:** Dark brown/black spiny bodies clustered together in tight groups on leaf undersides.
+  3. **Eggs:** Dark cylindrical patches glued along central leaf veins.
+  4. **Plant Symptoms:** Upper-leaf bleached yellow stippling + under-leaf shiny black tar-like frass droplets.
+* **Full Visual Guide File:** Link to [lace_bug_visual_scouting_guide.md](file:///Users/dr3/.gemini/antigravity/brain/828fa471-7f91-45b7-b6b6-a931aae6672e/lace_bug_visual_scouting_guide.md).
 
 ---
 
