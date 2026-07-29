@@ -81,4 +81,15 @@
 
 ---
 
+## 📅 Entry 7: Live Insect Colony Protocol & Option 1 Approval
+* **Date/Time:** July 28, 2026 | 8:41 PM CDT  
+* **Strategic Decisions:**
+  1. **Option 1 Approved:** Wednesday schedule will execute 1 morning site in San Angelo (7:30–9:00 AM) → 3.5 hr transit to Wichita Falls hotel → 1 afternoon site in Wichita Falls.
+  2. **Insect Survey & Colony Founding:** Focus shifted to capturing live *Leptinotarsa texana* / *L. defecta* adults and egg masses to establish lab colonies. Live bugs stored in ventilated tubes with damp paper and fresh foliage in a 18–22°C cool-box (never dry ice!).
+  3. **Streamlined 3-Replicate Protocol:** Target 3 replicates per site (`P01`, `P02`, `P03`) to trim site time from 90 mins down to 20–25 mins.
+  4. **Dr. Manish Kariyat Outreach:** Message drafted to confirm 3 replicates/site statistical sufficiency.
+* **Full Plan File:** Link to [expedition_plan_and_insect_colony_sop.md](file:///Users/dr3/.gemini/antigravity/brain/828fa471-7f91-45b7-b6b6-a931aae6672e/expedition_plan_and_insect_colony_sop.md).
+
+---
+
 *This journal will be continuously updated as new sites are visited and samples are logged.*
