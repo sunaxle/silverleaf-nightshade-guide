@@ -22,37 +22,47 @@ def main():
         flags=re.DOTALL
     )
 
-    # Replace tube-label display rendering to show physical cap and side labels cleanly
+    # Update renderGallery JS logic in photo_lab.html so that tube labels only show if tube is NOT N/A
     old_tube_box_js = """            tubeBox.innerHTML = `
-              <strong>Tube Tags:</strong><br>
-              GEN: ${p.tube_gen}<br>
-              BUG: ${p.tube_bug}<br>
-              SOIL: ${p.tube_soil}
-            `;"""
-
-    new_tube_box_js = """            tubeBox.innerHTML = `
               <div style="background:#f4fbf7; border-left:4px solid #2e7d32; padding:8px 10px; border-radius:6px; margin-top:8px;">
                 <strong style="color:#1b5e20; font-size:12px;">🧪 Physical Tube Label:</strong><br>
                 <span style="font-size:11px;"><strong>Cap:</strong> ${p.cap_label || p.tube_gen}</span><br>
                 <span style="font-size:11px;"><strong>Side:</strong> ${p.side_label || p.tube_soil}</span>
               </div>
             `;"""
+
+    new_tube_box_js = """            if (p.cap_label && p.cap_label !== 'N/A' && p.tube_gen !== 'N/A') {
+              tubeBox.innerHTML = `
+                <div style="background:#f4fbf7; border-left:4px solid #2e7d32; padding:8px 10px; border-radius:6px; margin-top:8px;">
+                  <strong style="color:#1b5e20; font-size:12px;">🧪 Physical Tube Label:</strong><br>
+                  <span style="font-size:11px;"><strong>Cap:</strong> ${p.cap_label || p.tube_gen}</span><br>
+                  <span style="font-size:11px;"><strong>Side:</strong> ${p.side_label || p.tube_soil}</span>
+                </div>
+              `;
+            } else {
+              tubeBox.innerHTML = `<div style="padding:6px 10px; background:#f9f9f9; border-radius:6px; margin-top:8px; font-size:11px; color:#666;">📷 Site / Overview Photo (No Tubes Collected)</div>`;
+            }"""
 
     html = html.replace(old_tube_box_js, new_tube_box_js)
 
     old_tube_card = """            <div class="tube-label">
-              <strong>Tube Tags:</strong><br>
-              GEN: ${p.tube_gen}<br>
-              BUG: ${p.tube_bug}<br>
-              SOIL: ${p.tube_soil}
-            </div>"""
-
-    new_tube_card = """            <div class="tube-label">
               <div style="background:#f4fbf7; border-left:4px solid #2e7d32; padding:8px 10px; border-radius:6px; margin-top:8px;">
                 <strong style="color:#1b5e20; font-size:12px;">🧪 Physical Tube Label:</strong><br>
                 <span style="font-size:11px;"><strong>Cap:</strong> ${p.cap_label || p.tube_gen}</span><br>
                 <span style="font-size:11px;"><strong>Side:</strong> ${p.side_label || p.tube_soil}</span>
               </div>
+            </div>"""
+
+    new_tube_card = """            <div class="tube-label">
+              ${(p.cap_label && p.cap_label !== 'N/A' && p.tube_gen !== 'N/A') ? `
+                <div style="background:#f4fbf7; border-left:4px solid #2e7d32; padding:8px 10px; border-radius:6px; margin-top:8px;">
+                  <strong style="color:#1b5e20; font-size:12px;">🧪 Physical Tube Label:</strong><br>
+                  <span style="font-size:11px;"><strong>Cap:</strong> ${p.cap_label || p.tube_gen}</span><br>
+                  <span style="font-size:11px;"><strong>Side:</strong> ${p.side_label || p.tube_soil}</span>
+                </div>
+              ` : `
+                <div style="padding:6px 10px; background:#f9f9f9; border-radius:6px; margin-top:8px; font-size:11px; color:#666;">📷 Site / Overview Photo (No Tubes Collected)</div>
+              `}
             </div>"""
 
     html = html.replace(old_tube_card, new_tube_card)
@@ -60,7 +70,7 @@ def main():
     with open('photo_lab.html', 'w') as f:
         f.write(html)
 
-    print("Successfully updated photo_lab.html with clean physical cap & side label display!")
+    print("Successfully updated photo_lab.html to hide tube labels for overview photos!")
 
 if __name__ == '__main__':
     main()

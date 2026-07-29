@@ -935,13 +935,17 @@
         if (card) {
           const tubeBox = card.querySelector('.tube-label');
           if (tubeBox) {
-            tubeBox.innerHTML = `
-              <div style="background:#f4fbf7; border-left:4px solid #2e7d32; padding:8px 10px; border-radius:6px; margin-top:8px;">
-                <strong style="color:#1b5e20; font-size:12px;">🧪 Physical Tube Label:</strong><br>
-                <span style="font-size:11px;"><strong>Cap:</strong> ${p.cap_label || p.tube_gen}</span><br>
-                <span style="font-size:11px;"><strong>Side:</strong> ${p.side_label || p.tube_soil}</span>
-              </div>
-            `;
+            if (p.cap_label && p.cap_label !== 'N/A' && p.tube_gen !== 'N/A') {
+              tubeBox.innerHTML = `
+                <div style="background:#f4fbf7; border-left:4px solid #2e7d32; padding:8px 10px; border-radius:6px; margin-top:8px;">
+                  <strong style="color:#1b5e20; font-size:12px;">🧪 Physical Tube Label:</strong><br>
+                  <span style="font-size:11px;"><strong>Cap:</strong> ${p.cap_label || p.tube_gen}</span><br>
+                  <span style="font-size:11px;"><strong>Side:</strong> ${p.side_label || p.tube_soil}</span>
+                </div>
+              `;
+            } else {
+              tubeBox.innerHTML = `<div style="padding:6px 10px; background:#f9f9f9; border-radius:6px; margin-top:8px; font-size:11px; color:#666;">📷 Site / Overview Photo (No Tubes Collected)</div>`;
+            }
           }
         }
       }
@@ -1038,11 +1042,15 @@
             </div>
 
             <div class="tube-label">
-              <div style="background:#f4fbf7; border-left:4px solid #2e7d32; padding:8px 10px; border-radius:6px; margin-top:8px;">
-                <strong style="color:#1b5e20; font-size:12px;">🧪 Physical Tube Label:</strong><br>
-                <span style="font-size:11px;"><strong>Cap:</strong> ${p.cap_label || p.tube_gen}</span><br>
-                <span style="font-size:11px;"><strong>Side:</strong> ${p.side_label || p.tube_soil}</span>
-              </div>
+              ${(p.cap_label && p.cap_label !== 'N/A' && p.tube_gen !== 'N/A') ? `
+                <div style="background:#f4fbf7; border-left:4px solid #2e7d32; padding:8px 10px; border-radius:6px; margin-top:8px;">
+                  <strong style="color:#1b5e20; font-size:12px;">🧪 Physical Tube Label:</strong><br>
+                  <span style="font-size:11px;"><strong>Cap:</strong> ${p.cap_label || p.tube_gen}</span><br>
+                  <span style="font-size:11px;"><strong>Side:</strong> ${p.side_label || p.tube_soil}</span>
+                </div>
+              ` : `
+                <div style="padding:6px 10px; background:#f9f9f9; border-radius:6px; margin-top:8px; font-size:11px; color:#666;">📷 Site / Overview Photo (No Tubes Collected)</div>
+              `}
             </div>
           </div>
         `;
