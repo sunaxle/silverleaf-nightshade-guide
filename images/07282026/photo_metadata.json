@@ -601,15 +601,15 @@
     "lat": 31.42964666666667,
     "lon": -100.47628,
     "dist_m": 39.94,
-    "plant_replicate": "App Logs & Moisture Screenshots",
+    "plant_replicate": "Dr. Sotti Sample 2 (Root/Soil Bag)",
     "site_id": "S01",
     "treatment": "Data Verification",
     "tube_gen": "App Moisture Screenshots",
     "tube_bug": "N/A",
-    "tube_soil": "N/A",
-    "category": "Data Log Screenshot / Field Summary",
-    "cap_label": "N/A",
-    "side_label": "App Metric Logs"
+    "tube_soil": "SA01-SOIL-R2",
+    "category": "Dr. Sotti Below-Ground Harvest Sample 2",
+    "cap_label": "SA01-SOIL-R2",
+    "side_label": "SE | SA01 | FLOW | SOIL-R2 | 2026-07-28 | DR"
   },
   {
     "seq_id": 35,
@@ -619,15 +619,15 @@
     "lat": 31.42964666666667,
     "lon": -100.4762716666667,
     "dist_m": 0.79,
-    "plant_replicate": "App Logs & Moisture Screenshots",
+    "plant_replicate": "Dr. Sotti Sample 2 (Root/Soil Bag)",
     "site_id": "S01",
     "treatment": "Data Verification",
     "tube_gen": "App Moisture Screenshots",
     "tube_bug": "N/A",
-    "tube_soil": "N/A",
-    "category": "Data Log Screenshot / Field Summary",
-    "cap_label": "N/A",
-    "side_label": "App Metric Logs"
+    "tube_soil": "SA01-SOIL-R2",
+    "category": "Dr. Sotti Below-Ground Harvest Sample 2",
+    "cap_label": "SA01-SOIL-R2",
+    "side_label": "SE | SA01 | FLOW | SOIL-R2 | 2026-07-28 | DR"
   },
   {
     "seq_id": 36,
