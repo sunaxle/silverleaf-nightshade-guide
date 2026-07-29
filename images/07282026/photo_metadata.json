@@ -211,9 +211,10 @@
     "tube_gen": "SA01-FLOW-R1",
     "tube_bug": "SA01-BUG-R1",
     "tube_soil": "SA01-SOIL-R1",
-    "category": "Herbivory Close-up",
+    "category": "Gratiana pallidula & Windowpane Herbivory",
     "cap_label": "SA01-FLOW-R1",
-    "side_label": "SE | SA01 | FLOW | R1 (P1-P3) | 2026-07-28 | DR"
+    "side_label": "SE | SA01 | FLOW | R1 (P1-P3) | 2026-07-28 | DR",
+    "entomological_note": "Gratiana pallidula (Eggplant Tortoise Beetle) larvae with caudal furca fecal shields & windowpane epidermal scraping."
   },
   {
     "seq_id": 13,
