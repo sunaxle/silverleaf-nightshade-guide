@@ -132,7 +132,21 @@
 * **Species Added:** Woolly Nightshade / Solanaceous Lace Bug (*Gargaphia decoris* Drake, Tingidae).
 * **Biocontrol Documentation:** Integrated Manaaki Whenua Landcare Research biocontrol guide into Bug Guide web app (`index.html` / `app.js` / `data.js`).
 * **Field Scouting Protocol:** Look on **underside of leaves (abaxial surface)** for gregarious spiny nymph clusters, adults (~3-4mm lace wings), pale yellow stippling, and black tar-like frass drops.
-* **Full Scouting Guide File:** Link to [lace_bug_biocontrol_guide.md](file:///Users/dr3/.gemini/antigravity/brain/828fa471-7f91-45b7-b6b6-a931aae6672e/lace_bug_biocontrol_guide.md).
+
+---
+
+## 📅 Entry 13: Finalized Wednesday Expedition Blueprint (San Angelo → Abilene → Wichita Falls)
+* **Date/Time:** July 28, 2026 | 10:07 PM CDT  
+* **Finalized Itinerary:**
+  1. **7:30 AM – 9:00 AM (San Angelo):** Sample 1–2 spots in San Angelo (`S02`). Whole-plant bagging + 3 fast replicates + live colony capture.
+  2. **9:15 AM (FedEx Dropoff):** Consolidate Tuesday (`SA01`) + Wednesday morning (`S02`) dry ice tubes; drop at FedEx (3371 Knickerbocker Rd).
+  3. **9:30 AM – 10:50 AM (Transit):** Drive US-277 N to Abilene (89 mi).
+  4. **11:00 AM – 11:45 AM (Abilene):** Sample Site `S03` (Taylor County / Rolling Plains). Whole-plant bagging + live colony capture.
+  5. **12:00 PM – 2:15 PM (Transit):** Drive US-277/US-287 N to Wichita Falls (142 mi). Make 5-min "Sotti-style" roadside opportunity stops (`OPP01`, `OPP02`).
+  6. **2:30 PM – 3:30 PM (Hotel Check-In & Rest):** Check into Wichita Falls hotel, store live insect colony tubes in AC room, rehydrate team.
+  7. **3:45 PM – 5:00 PM (Wichita Falls):** Sample Site `S04` (Red River Basin).
+  8. **5:15 PM (FedEx Dropoff):** Drop afternoon dry ice batch at Wichita Falls FedEx store before 6:00 PM cutoff.
+* **Full Plan File:** Link to [expedition_plan_and_insect_colony_sop.md](file:///Users/dr3/.gemini/antigravity/brain/828fa471-7f91-45b7-b6b6-a931aae6672e/expedition_plan_and_insect_colony_sop.md).
 
 ---
 
