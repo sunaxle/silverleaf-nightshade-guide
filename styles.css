@@ -328,6 +328,15 @@ main {
   background: #FFE0B2;
 }
 
+.link-biocontrol {
+  background: #2E7D32;
+  color: #ffffff;
+}
+
+.link-biocontrol:hover {
+  background: #1B5E20;
+}
+
 /* Footer */
 footer {
   text-align: center;

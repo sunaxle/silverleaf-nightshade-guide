@@ -1,5 +1,32 @@
 const insectData = [
   {
+    "name": "Woolly Nightshade Lace Bug",
+    "scientific": "Gargaphia decoris",
+    "category": "True Bugs",
+    "type": "Herbivores and Biocontrol Agents",
+    "inaturalist": "https://www.inaturalist.org/taxa/923363",
+    "bugguide": "https://www.landcareresearch.co.nz/discover-our-research/managing-invasive-species/weed-biocontrol/projects-agents/biocontrol-agents/woolly-nightshade-lace-bug",
+    "image": "bugphoto/photos_of_Lace_Bug_arizonica/AL0ZTLQZNL5RFZSRCZMRCZGR0HPRQHIRDZZZ9LFL9LMRTZ0RFZ3LNLXRDZJLEL3LBLKZZHSZVLSZQH8RDL8RZHGRRHGR.jpg"
+  },
+  {
+    "name": "Arizona Lace Bug",
+    "scientific": "Gargaphia arizonica",
+    "category": "True Bugs",
+    "type": "Herbivores and Biocontrol Agents",
+    "inaturalist": "https://www.inaturalist.org/taxa/1465197",
+    "bugguide": "https://www.landcareresearch.co.nz/discover-our-research/managing-invasive-species/weed-biocontrol/projects-agents/biocontrol-agents/woolly-nightshade-lace-bug",
+    "image": "bugphoto/photos_of_Lace_Bug_arizonica/AL0ZTLQZNL5RFZSRCZMRCZGR0HPRQHIRDZZZ9LFL9LMRTZ0RFZ3LNLXRDZJLEL3LBLKZZHSZVLSZQH8RDL8RZHGRRHGR.jpg"
+  },
+  {
+    "name": "Eggplant Tortoise Beetle",
+    "scientific": "Gratiana pallidula",
+    "category": "Beetles and Weevils",
+    "type": "Herbivores and Biocontrol Agents",
+    "inaturalist": "https://www.inaturalist.org/taxa/310170",
+    "bugguide": "https://bugguide.net/index.php?q=search&keys=Gratiana%20pallidula",
+    "image": "bugphoto/photos_of_Eggplant_Tortoise_Beetle/4RRHERLHMR1LHZ9LLZWLLZ6LLZWLMZWLMZ0H6RKHMR3Z3LWLFLOZ0R9LJLYZKRWL3LNLMZWLSR6LSRPLLZ3ZQR3ZSREL.jpg"
+  },
+  {
     "name": "Texas False Potato Beetle",
     "scientific": "Leptinotarsa texana",
     "category": "Beetles and Weevils",
@@ -27,40 +54,13 @@ const insectData = [
     "image": "bugphoto/photos_of_Stem_boring_Weevil/NHLR6HRRXHAZZL8Z0LAZGLUZ7L9Z7L1ZUHHRILWZ4L3HMLZRNHJHWHHRGHAH2HHRUH1ZKL2Z5H1HGH5ZKLOHKL1H7H3H.jpg"
   },
   {
-    "name": "Woolly Nightshade Lace Bug",
-    "scientific": "Gargaphia decoris",
-    "category": "True Bugs",
-    "type": "Herbivores and Biocontrol Agents",
-    "inaturalist": "https://www.inaturalist.org/taxa/923363",
-    "bugguide": "https://www.landcareresearch.co.nz/discover-our-research/managing-invasive-species/weed-biocontrol/projects-agents/biocontrol-agents/woolly-nightshade-lace-bug",
-    "image": "bugphoto/photos_of_Lace_Bug_arizonica/AL0ZTLQZNL5RFZSRCZMRCZGR0HPRQHIRDZZZ9LFL9LMRTZ0RFZ3LNLXRDZJLEL3LBLKZZHSZVLSZQH8RDL8RZHGRRHGR.jpg"
-  },
-  {
-    "name": "Eggplant Tortoise Beetle",
-    "scientific": "Gratiana pallidula",
+    "name": "Flea Beetle",
+    "scientific": "Chaetocnema minuta",
     "category": "Beetles and Weevils",
     "type": "Herbivores and Biocontrol Agents",
-    "inaturalist": "https://www.inaturalist.org/taxa/310170",
-    "bugguide": "https://bugguide.net/index.php?q=search&keys=Gratiana%20pallidula",
-    "image": "bugphoto/photos_of_Eggplant_Tortoise_Beetle/4RRHERLHMR1LHZ9LLZWLLZ6LLZWLMZWLMZ0H6RKHMR3Z3LWLFLOZ0R9LJLYZKRWL3LNLMZWLSR6LSRPLLZ3ZQR3ZSREL.jpg"
-  },
-  {
-    "name": "Arizona Lace Bug",
-    "scientific": "Gargaphia arizonica",
-    "category": "True Bugs",
-    "type": "Herbivores and Biocontrol Agents",
-    "inaturalist": "https://www.inaturalist.org/taxa/1465197",
-    "bugguide": "https://bugguide.net/index.php?q=search&keys=Gargaphia%20arizonica",
-    "image": "bugphoto/photos_of_Lace_Bug_arizonica/AL0ZTLQZNL5RFZSRCZMRCZGR0HPRQHIRDZZZ9LFL9LMRTZ0RFZ3LNLXRDZJLEL3LBLKZZHSZVLSZQH8RDL8RZHGRRHGR.jpg"
-  },
-  {
-    "name": "Lace Bug",
-    "scientific": "Gargaphia opacula",
-    "category": "True Bugs",
-    "type": "Herbivores and Biocontrol Agents",
-    "inaturalist": "https://www.inaturalist.org/taxa/1031036",
-    "bugguide": "https://bugguide.net/index.php?q=search&keys=Gargaphia%20opacula",
-    "image": "images/true_bugs_1778696234797.png"
+    "inaturalist": "https://www.inaturalist.org/taxa/216623",
+    "bugguide": "https://bugguide.net/index.php?q=search&keys=Chaetocnema%20minuta",
+    "image": "bugphoto/photos_of_Flea_Beetle/9ZXLVZMLPZPHDHIHBH4HTHIH1H7H3H9HDHRL5ZMHCHHLGZHLCH9HDHGHBHLL2ZSLTHIHBHZLPZHL8ZXHFH9HCHIH1H8H.jpg"
   },
   {
     "name": "Say Stink Bug",
