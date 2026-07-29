@@ -149,12 +149,18 @@
 
 ## 📅 Entry 14: Visual Field Photo Identification Keys for Lace Bugs (*Gargaphia* spp.)
 * **Date/Time:** July 28, 2026 | 10:16 PM CDT  
-* **Visual Photo Guide Synthesized:** Extracted key visual identifiers from Manaaki Whenua Landcare Research photos for field scouting:
-  1. **Adults (~3–4 mm):** Transparent lace-patterned wings + pale cream collar hood.
-  2. **Nymphs:** Dark brown/black spiny bodies clustered together in tight groups on leaf undersides.
-  3. **Eggs:** Dark cylindrical patches glued along central leaf veins.
-  4. **Plant Symptoms:** Upper-leaf bleached yellow stippling + under-leaf shiny black tar-like frass droplets.
-* **Full Visual Guide File:** Link to [lace_bug_visual_scouting_guide.md](file:///Users/dr3/.gemini/antigravity/brain/828fa471-7f91-45b7-b6b6-a931aae6672e/lace_bug_visual_scouting_guide.md).
+* **Visual Photo Guide Synthesized:** Extracted key visual identifiers from Manaaki Whenua Landcare Research photos for field scouting.
+
+---
+
+## 📅 Entry 15: Jumbo Whole-Plant Bag Master Labeling Protocol (`SA02`, `AB01`, `WF01`)
+* **Date/Time:** July 28, 2026 | 10:18 PM CDT  
+* **Standard Bag Label Formula:** `SE | [SITE_CODE] | FLOW | P01-P03 (3 Plants) | 2026-07-29 | DR`
+* **Short Code Tags:** `SA02-FLOW-P01-P03-TOP`, `AB01-FLOW-P01-P03-TOP`, `WF01-FLOW-P01-P03-TOP`
+* **Fail-Proof Marking Rules:**
+  1. Black Sharpie on lab tape / duct tape stuck on outside of jumbo bag.
+  2. Double protection: Drop a 3x5 paper slip inside the bag with the exact same ID written in pencil/Sharpie.
+* **Full Labeling SOP:** Link to [jumbo_plant_bag_labeling_guide.md](file:///Users/dr3/.gemini/antigravity/brain/828fa471-7f91-45b7-b6b6-a931aae6672e/jumbo_plant_bag_labeling_guide.md).
 
 ---
 
