@@ -104,7 +104,17 @@
 * **Route Update:** Added **Abilene, TX (Taylor County)** as a primary sampling stop on Wednesday.
 * **Geographic Corridor:** San Angelo (US-277 N, 89 mi) → Abilene (Site `S03`, 10:15–11:15 AM) → Wichita Falls (US-277/US-287 N, 142 mi, Site `S04`, 3:45–5:00 PM). Total driving: ~231 miles (3.5 hours).
 * **Ecoregion Benefit:** Captures 3 distinct ecoregion datasets in a single day: Red Prairie (San Angelo) → Rolling Plains/Limestone (Abilene) → Red River Basin (Wichita Falls).
-* **Full Plan File:** Link to [expedition_plan_and_insect_colony_sop.md](file:///Users/dr3/.gemini/antigravity/brain/828fa471-7f91-45b7-b6b6-a931aae6672e/expedition_plan_and_insect_colony_sop.md).
+
+---
+
+## 📅 Entry 10: Physical Tube Labeling Database Integration (`SA01`)
+* **Date/Time:** July 28, 2026 | 9:21 PM CDT  
+* **Physical Tube Markings Verified:**
+  * **Tube 1 (`R1`):** Cap `SA01-FLOW-R1` \| Side `SE | SA01 | FLOW | R1 (P1-P3) | 2026-07-28 | DR`
+  * **Tube 2 (`R2`):** Cap `SA01-FLOW-R2` \| Side `SE | SA01 | FLOW | R2 (P4-P6) | 2026-07-28 | DR`
+  * **Tube 3 (`R3`):** Cap `SA01-FLOW-R3` \| Side `SE | SA01 | FLOW | R3 (P7-P9) | 2026-07-28 | DR`
+* **Master Mapping Updated:** Linked all physical tube cap/side strings to `photo_metadata.json`, `photo_lab.html`, and `photo_mapping_and_labeling_master.md`.
+* **Master File:** Link to [photo_mapping_and_labeling_master.md](file:///Users/dr3/.gemini/antigravity/brain/828fa471-7f91-45b7-b6b6-a931aae6672e/photo_mapping_and_labeling_master.md).
 
 ---
 
