@@ -88,6 +88,16 @@
   2. **Insect Survey & Colony Founding:** Focus shifted to capturing live *Leptinotarsa texana* / *L. defecta* adults and egg masses to establish lab colonies. Live bugs stored in ventilated tubes with damp paper and fresh foliage in a 18–22°C cool-box (never dry ice!).
   3. **Streamlined 3-Replicate Protocol:** Target 3 replicates per site (`P01`, `P02`, `P03`) to trim site time from 90 mins down to 20–25 mins.
   4. **Dr. Manish Kariyat Outreach:** Message drafted to confirm 3 replicates/site statistical sufficiency.
+
+---
+
+## 📅 Entry 8: Opportunistic Highway Sampling Protocol ('Sotti-Style' Roadside Stops)
+* **Date/Time:** July 28, 2026 | 8:48 PM CDT  
+* **Opportunistic Sampling Protocol Added:**
+  * Enabled 5–10 minute "Sotti-Style" roadside opportunity stops during the 3.5-hour highway drive (US-287 / US-84) when dense, high-herbivory *Solanum elaeagnifolium* colonies are spotted.
+  * **Primary Focus:** Rapid insect plucking into live colony ventilated tubes (with fresh host leaves) and ethanol vials.
+  * **Sotti Soil Metrics:** 1-minute surface soil compaction reading (PSI probe) + quick surface soil/root core.
+  * **Sample Nomenclature:** Tagged as `[MMDD]-OPP[01]-[TREATMENT]-[TYPE]`.
 * **Full Plan File:** Link to [expedition_plan_and_insect_colony_sop.md](file:///Users/dr3/.gemini/antigravity/brain/828fa471-7f91-45b7-b6b6-a931aae6672e/expedition_plan_and_insect_colony_sop.md).
 
 ---
