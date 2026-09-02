@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>RGV Gardens & U-Pick Farms Map | Rio Grande Valley Community Agriculture</title>
+  <meta name="description" content="Interactive mobile-friendly map and comprehensive directory of community gardens, U-pick farms, demonstration gardens, and botanical sanctuaries across the Rio Grande Valley, Texas." />
+  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  
+  <!-- App Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+  
+  <!-- Favicon / Icons -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>">
+</head>
+<body>
+
+  <!-- App Header -->
+  <header class="app-header">
+    <div class="brand-wrapper">
+      <div class="brand-icon">🌱</div>
+      <div class="brand-text">
+        <h1>RGV Garden Map</h1>
+        <p>Rio Grande Valley Community Agriculture</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button id="btn-locate-user" class="btn-locate" title="Find gardens near my current GPS location">
+        🎯 Near Me
+      </button>
+    </div>
+  </header>
+
+  <!-- Navigation View Tabs -->
+  <nav class="view-tabs" role="tablist">
+    <button class="tab-btn active" data-tab="map-view" role="tab" aria-selected="true">
+      🗺️ <span>Interactive Map</span>
+    </button>
+    <button class="tab-btn" data-tab="directory-view" role="tab" aria-selected="false">
+      📋 <span>Garden Directory</span>
+      <span class="badge-count badge-count-all">0</span>
+    </button>
+    <button class="tab-btn" data-tab="guide-view" role="tab" aria-selected="false">
+      📖 <span>Info & Resources</span>
+    </button>
+  </nav>
+
+  <!-- Main Content Container -->
+  <main class="main-content">
+
+    <!-- ==================== TAB 1: INTERACTIVE MAP VIEW ==================== -->
+    <section id="map-view" class="tab-view active" role="tabpanel">
+      
+      <!-- Mobile Floating Search & Chips Controls Bar -->
+      <div class="map-controls-bar">
+        <div class="search-container">
+          <span class="search-icon">🔍</span>
+          <input type="text" class="search-input" placeholder="Search gardens, crops (e.g. carrots), city..." />
+          <button class="clear-search-btn" title="Clear search">✕</button>
+        </div>
+        <div class="filter-chips-wrapper">
+          <button class="chip-btn active" data-category="all">🌿 All</button>
+          <button class="chip-btn" data-category="community_garden">🌱 Community Gardens</button>
+          <button class="chip-btn" data-category="upick_farm">🍓 U-Pick Farms</button>
+          <button class="chip-btn" data-category="demonstration_garden">🎓 Master Gardener & Demos</button>
+          <button class="chip-btn" data-category="botanical_sanctuary">🌻 Botanical Sanctuaries</button>
+          <button class="chip-btn" data-category="historic_herbal">🌸 Historic & Healing</button>
+        </div>
+      </div>
+
+      <!-- Desktop Sidebar (visible on screens >= 768px) -->
+      <aside class="desktop-sidebar">
+        <div class="sidebar-controls">
+          <div class="search-container">
+            <span class="search-icon">🔍</span>
+            <input type="text" class="search-input" placeholder="Search gardens, crops, city..." />
+            <button class="clear-search-btn" title="Clear search">✕</button>
+          </div>
+          <div class="filter-chips-wrapper">
+            <button class="chip-btn active" data-category="all">🌿 All</button>
+            <button class="chip-btn" data-category="community_garden">🌱 Community</button>
+            <button class="chip-btn" data-category="upick_farm">🍓 U-Pick</button>
+            <button class="chip-btn" data-category="demonstration_garden">🎓 Demo</button>
+            <button class="chip-btn" data-category="botanical_sanctuary">🌻 Botanical</button>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 4px;">
+            <select class="city-select" title="Filter by City">
+              <option value="all">All Cities</option>
+            </select>
+            <span class="drawer-count garden-count-badge">0 Gardens</span>
+          </div>
+        </div>
+        <div id="sidebar-cards-list" class="sidebar-list">
+          <!-- Dynamic cards rendered by app.js -->
+        </div>
+      </aside>
+
+      <!-- Leaflet Map Container -->
+      <div class="map-stage">
+        <div id="map"></div>
+      </div>
+
+      <!-- Mobile Sliding Bottom Sheet Drawer -->
+      <div id="mobile-bottom-drawer" class="bottom-drawer collapsed">
+        <div id="drawer-toggle-bar" class="drawer-header">
+          <div class="drawer-pill"></div>
+          <div class="drawer-title-row">
+            <div class="drawer-title">
+              <span>🌿 Explore Gardens</span>
+              <span class="drawer-count garden-count-badge">0 Gardens</span>
+            </div>
+            <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">Tap to expand ▴</span>
+          </div>
+        </div>
+        <div id="drawer-cards-list" class="drawer-content">
+          <!-- Dynamic cards rendered by app.js -->
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ==================== TAB 2: FULL DIRECTORY & CARDS VIEW ==================== -->
+    <section id="directory-view" class="tab-view" role="tabpanel">
+      
+      <!-- Directory Header Banner -->
+      <div class="directory-header">
+        <h2>🌿 Rio Grande Valley Garden Directory</h2>
+        <p>Browse community gardens, U-pick orchards, Texas Master Gardener demonstration stations, and botanical preserves across Hidalgo, Cameron, and Willacy counties.</p>
+        <div class="directory-stats">
+          <span class="stat-chip">🌱 Community Plots</span>
+          <span class="stat-chip">🍓 Pick-Your-Own Produce</span>
+          <span class="stat-chip">🎓 Master Gardener Classes</span>
+          <span class="stat-chip">🦋 Native Pollinator Habitats</span>
+        </div>
+      </div>
+
+      <!-- Directory Search & Filter Toolbar -->
+      <div class="directory-toolbar">
+        <div class="search-container" style="max-width: 380px; flex: 1;">
+          <span class="search-icon">🔍</span>
+          <input type="text" class="search-input" placeholder="Search by name, crop, city..." />
+          <button class="clear-search-btn" title="Clear search">✕</button>
+        </div>
+        
+        <div style="display: flex; gap: 8px; align-items: center;">
+          <select class="city-select" title="Filter by City">
+            <option value="all">All Cities</option>
+          </select>
+          <span class="drawer-count garden-count-badge">0 Gardens</span>
+        </div>
+      </div>
+
+      <!-- Category Filter Chips -->
+      <div class="filter-chips-wrapper">
+        <button class="chip-btn active" data-category="all">🌿 All Locations</button>
+        <button class="chip-btn" data-category="community_garden">🌱 Community Gardens</button>
+        <button class="chip-btn" data-category="upick_farm">🍓 U-Pick Farms</button>
+        <button class="chip-btn" data-category="demonstration_garden">🎓 Master Gardener Demos</button>
+        <button class="chip-btn" data-category="botanical_sanctuary">🌻 Botanical Sanctuaries</button>
+        <button class="chip-btn" data-category="historic_herbal">🌸 Historic & Healing</button>
+      </div>
+
+      <!-- Cards Grid -->
+      <div id="directory-grid" class="gardens-grid">
+        <!-- Dynamic cards rendered by app.js -->
+      </div>
+
+    </section>
+
+    <!-- ==================== TAB 3: INFO & KNOWLEDGE HUB ("FOLLOWING PAGE") ==================== -->
+    <section id="guide-view" class="tab-view" role="tabpanel">
+      <div class="guide-container">
+        
+        <!-- Hero Section -->
+        <div class="guide-hero">
+          <h2>🌱 Rio Grande Valley Gardening & Farm Guide</h2>
+          <p>Everything you need to know about getting involved with community garden plots, visiting local U-pick farms, volunteering, and growing fresh produce in USDA Hardiness Zone 9b/10a.</p>
+        </div>
+
+        <!-- Quick Jump Categories -->
+        <div class="guide-card">
+          <h3>🚀 Quick Navigation</h3>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;">
+            <a href="#" class="chip-btn guide-category-jump" data-category="community_garden">🌱 Browse Community Gardens</a>
+            <a href="#" class="chip-btn guide-category-jump" data-category="upick_farm">🍓 Browse U-Pick Farms</a>
+            <a href="#" class="chip-btn guide-category-jump" data-category="demonstration_garden">🎓 Browse Demonstration Beds</a>
+            <a href="#" class="chip-btn guide-category-jump" data-category="botanical_sanctuary">🌻 Browse Botanical Preserves</a>
+          </div>
+        </div>
+
+        <!-- Essential Regional Organizations & Direct Links -->
+        <div class="guide-card">
+          <h3>🌐 Regional Food & Agriculture Organizations</h3>
+          <p style="font-size: 0.86rem; color: var(--text-muted); margin-bottom: 14px;">Connect directly with local university programs, non-profits, and extension offices supporting urban agriculture across the Valley:</p>
+          
+          <div class="link-resource-grid">
+            <a href="https://www.rgvagroecology.com" target="_blank" class="resource-link-card">
+              <span class="res-title">UTRGV Agroecology Program ↗</span>
+              <span class="res-desc">Manages The Hub of Prosperity, certified organic campus gardens, farmer apprenticeships, and regional food summits in Edinburg.</span>
+            </a>
+
+            <a href="https://www.btxwc.org" target="_blank" class="resource-link-card">
+              <span class="res-title">Brownsville Wellness Coalition ↗</span>
+              <span class="res-desc">Operates 6+ community gardens in Brownsville (Tres Angeles, Esperanza, Lemon Grass, etc.), cooking classes (La Cocina Alegre), and the Cannery Market.</span>
+            </a>
+
+            <a href="https://hidalgo.agrilife.org" target="_blank" class="resource-link-card">
+              <span class="res-title">Texas A&M AgriLife (Hidalgo County) ↗</span>
+              <span class="res-desc">Hidalgo County Master Gardeners, soil testing, demonstration gardens at N. San Juan Community Center, and Master Gardener intern training.</span>
+            </a>
+
+            <a href="https://cameron.agrilife.org" target="_blank" class="resource-link-card">
+              <span class="res-title">Texas A&M AgriLife (Cameron County) ↗</span>
+              <span class="res-desc">Cameron County Master Gardener Demonstration Arboretum in San Benito, native plant propagation, and home vegetable guides.</span>
+            </a>
+
+            <a href="https://www.nationalbutterflycenter.org" target="_blank" class="resource-link-card">
+              <span class="res-title">National Butterfly Center (Mission) ↗</span>
+              <span class="res-desc">100-acre botanical preserve with over 200 native host and nectar species, nursery, and conservation workshops.</span>
+            </a>
+
+            <a href="https://www.valleynaturecenter.org" target="_blank" class="resource-link-card">
+              <span class="res-title">Valley Nature Center (Weslaco) ↗</span>
+              <span class="res-desc">6-acre historic native plant preserve, cactus rockeries, butterfly feeding stations, and native plant nursery sales.</span>
+            </a>
+
+            <a href="https://www.quintamazatlan.com" target="_blank" class="resource-link-card">
+              <span class="res-title">Quinta Mazatlan Urban Sanctuary ↗</span>
+              <span class="res-desc">20-acre urban thornforest sanctuary, Center for Urban Ecology, native ethnobotanical trails, and eco-workshops in McAllen.</span>
+            </a>
+
+            <a href="https://npsot.org" target="_blank" class="resource-link-card">
+              <span class="res-title">Native Plant Society of Texas (RGV) ↗</span>
+              <span class="res-desc">Resources on drought-tolerant landscaping, native thornscrub flora, and community pollinator habitats.</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- How to Join a Community Garden -->
+        <div class="guide-card">
+          <h3>🤝 How to Join or Volunteer at an RGV Community Garden</h3>
+          <ol style="padding-left: 20px; font-size: 0.88rem; display: flex; flex-direction: column; gap: 8px; color: #334155;">
+            <li><strong>Find a garden near you:</strong> Use the <a href="#" class="guide-category-jump" data-category="community_garden" style="color: var(--primary); font-weight: 700;">Interactive Map</a> or search by your city.</li>
+            <li><strong>Select your involvement level:</strong>
+              <ul style="margin-top: 4px; padding-left: 18px;">
+                <li><strong>Adopt a Bed / Plot Rental:</strong> Available at McAllen Community Garden, UTRGV Agroecology (Edinburg), and Brownsville Wellness Coalition locations. Most charge a nominal fee or require attendance at free community gardening classes.</li>
+                <li><strong>Volunteer Workdays:</strong> Open to all! Weekly opportunities at The Hub of Prosperity (Saturdays 8 AM–12 PM), Hidalgo Master Gardeners (Tue/Thu 8 AM–12 PM), and Terra Preta Farm.</li>
+              </ul>
+            </li>
+            <li><strong>Supplies provided:</strong> Most community gardens provide city water/drip systems, compost, basic shovels, and trowels. Bring your own sun protection, garden gloves, and water bottle.</li>
+          </ol>
+        </div>
+
+        <!-- U-Pick Farms & Fruit Harvesting in South Texas -->
+        <div class="guide-card">
+          <h3>🍓 South Texas U-Pick Farms & Orchard Etiquette</h3>
+          <div style="font-size: 0.88rem; color: #334155; display: flex; flex-direction: column; gap: 10px;">
+            <p>While public pick-your-own operations are rare in the RGV due to strict citrus agricultural quarantines (Mexican fruit fly monitoring), select family farms offer extraordinary seasonal picking experiences:</p>
+            
+            <div style="background: var(--bg-color); padding: 12px; border-radius: var(--radius-sm); border-left: 4px solid var(--secondary);">
+              <strong>🌟 Top RGV U-Pick & Farm Experiences:</strong>
+              <ul style="margin-top: 6px; padding-left: 18px;">
+                <li><strong>Obst Family Farm (Alamo, TX):</strong> Famous Rio Red grapefruit, oranges (Oct–Feb), sweet onions and vegetables (Nov–Jan), watermelons and cantaloupes (Apr–May). <em>Always call ahead at (956) 787-6917 to confirm field availability.</em></li>
+                <li><strong>Yahweh's All-Natural Farm (Harlingen, TX):</strong> Certified organic "Pick-Your-Own Carrot Days", organic greens, farm walks, and CSA pickup. <em>Call (956) 412-4916 for upcoming picking weekends.</em></li>
+                <li><strong>Bells Farm to Market (McAllen, TX):</strong> Fresh field harvests, sweet corn, citrus, and volunteer harvesting assistance.</li>
+              </ul>
+            </div>
+
+            <p><strong>⚠️ Pro-Tips for Visiting:</strong></p>
+            <ul style="padding-left: 18px;">
+              <li><strong>Always Call Before You Go:</strong> Harvest availability fluctuates rapidly with South Texas weather and crop ripening.</li>
+              <li><strong>Timing:</strong> Arrive early in the morning (8:00 AM – 10:30 AM) to beat the South Texas afternoon heat.</li>
+              <li><strong>Containers:</strong> Bring reusable crates, breathable bags, or sturdy boxes for your harvest.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- RGV Planting Calendar (Zone 9b / 10a) -->
+        <div class="guide-card">
+          <h3>📅 Rio Grande Valley Vegetable Planting Calendar (Zone 9b / 10a)</h3>
+          <p style="font-size: 0.86rem; color: var(--text-muted); margin-bottom: 10px;">Unlike northern regions, the Rio Grande Valley has two prime growing seasons: a warm Spring season and a mild, highly productive Fall/Winter season.</p>
+          
+          <div style="overflow-x: auto;">
+            <table class="calendar-table">
+              <thead>
+                <tr>
+                  <th>Crop</th>
+                  <th>Fall / Winter Season</th>
+                  <th>Spring / Early Summer Season</th>
+                  <th>Tips for RGV Soils</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Tomatoes</strong></td>
+                  <td>Plant transplants in Aug – Sep</td>
+                  <td>Plant transplants Jan 15 – Feb 28</td>
+                  <td>Use heat-tolerant varieties (Tycoon, Celebrity, Solar Fire)</td>
+                </tr>
+                <tr>
+                  <td><strong>Peppers (Jalapeño, Serrano, Bell)</strong></td>
+                  <td>Aug 1 – Sep 15</td>
+                  <td>Jan 15 – Mar 15</td>
+                  <td>Thrives in RGV heat; mulch heavily to conserve moisture</td>
+                </tr>
+                <tr>
+                  <td><strong>Carrots & Beets</strong></td>
+                  <td>Oct 1 – Dec 15</td>
+                  <td>Jan 1 – Feb 15</td>
+                  <td>Loose, composted sandy loam prevents root branching</td>
+                </tr>
+                <tr>
+                  <td><strong>Leafy Greens (Kale, Chard, Lettuce)</strong></td>
+                  <td>Sep 15 – Nov 30</td>
+                  <td>Jan 1 – Feb 28</td>
+                  <td>Peak season is Nov–Feb; shade cloth extends spring harvest</td>
+                </tr>
+                <tr>
+                  <td><strong>Cucumbers & Squash (Calabacita)</strong></td>
+                  <td>Aug 15 – Sep 30</td>
+                  <td>Feb 15 – Apr 1</td>
+                  <td>Watch for squash vine borers; pollinator plants increase fruit set</td>
+                </tr>
+                <tr>
+                  <td><strong>Citrus (Grapefruit, Oranges, Limes)</strong></td>
+                  <td>Harvest Oct – Feb</td>
+                  <td>Fertilize early spring flush</td>
+                  <td>Rio Red Grapefruit is the iconic Texas state fruit</td>
+                </tr>
+                <tr>
+                  <td><strong>Herbs (Cilantro, Oregano, Basil)</strong></td>
+                  <td>Oct 1 – Dec 1 (Cilantro/Parsley)</td>
+                  <td>Mar 1 – May 1 (Basil, Mint)</td>
+                  <td>Cilantro bolts quickly in heat; grow in cool winter months</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== DETAIL MODAL DIALOG ==================== -->
+  <div id="garden-detail-modal" class="modal-overlay" role="dialog" aria-modal="true">
+    <div class="modal-dialog">
+      <button id="modal-close-btn" class="modal-close-btn" title="Close details">✕</button>
+      <img id="modal-img" src="" alt="Garden photo" class="modal-header-img" />
+      
+      <div class="modal-body">
+        <div class="modal-badge-row">
+          <span id="modal-category-badge" class="card-badge" style="position: static; font-size: 0.8rem;">Category</span>
+        </div>
+
+        <h2 id="modal-title" class="modal-title">Garden Name</h2>
+        <div id="modal-address" class="card-location" style="font-weight: 600;">📍 Address</div>
+
+        <p id="modal-desc" style="font-size: 0.9rem; line-height: 1.5; color: #334155;"></p>
+
+        <div class="modal-info-grid">
+          <div class="modal-info-row">
+            <span class="info-label">🕒 Hours:</span>
+            <span id="modal-hours" class="info-value"></span>
+          </div>
+          <div class="modal-info-row">
+            <span class="info-label">🤝 Volunteer:</span>
+            <span id="modal-volunteer" class="info-value"></span>
+          </div>
+          <div class="modal-info-row">
+            <span class="info-label">🌱 Crops:</span>
+            <span id="modal-crops" class="info-value"></span>
+          </div>
+          <div class="modal-info-row">
+            <span class="info-label">📋 How to Join:</span>
+            <span id="modal-howto" class="info-value"></span>
+          </div>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.85rem; font-weight: 700; color: var(--text-main); margin-bottom: 6px;">Features & Amenities:</h4>
+          <div id="modal-features" class="card-features-pills"></div>
+        </div>
+
+        <div class="modal-actions-bar">
+          <a id="modal-directions-btn" href="#" target="_blank" class="action-btn btn-green">
+            🗺️ Open in Maps
+          </a>
+          <a id="modal-call-btn" href="#" class="action-btn btn-orange">
+            📞 Call Farm
+          </a>
+          <a id="modal-web-btn" href="#" target="_blank" class="action-btn btn-blue">
+            🌐 Visit Website
+          </a>
+          <a id="modal-social-btn" href="#" target="_blank" class="action-btn btn-gray">
+            📘 Social Media
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Leaflet JavaScript -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  
+  <!-- Main Application Script -->
+  <script src="app.js"></script>
+</body>
+</html>
